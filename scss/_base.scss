@@ -1,0 +1,31 @@
+:root {
+	--color-primary: #6f56d5;
+}
+
+body {
+	font-family: system-ui;
+}
+
+a {
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+// Utils
+.wrapper {
+	width: min(100% - 2rem, 65rem);
+	margin-inline: auto;
+	padding-block: 2rem;
+}
+
+// Burger : for example
+.main-nav {
+	visibility: hidden;
+	transform: translateX(-10px);
+	transition: all 0.3s linear;
+
+	&.is-open {
+		visibility: visible;
+		transform: translateX(0);
+	}
+}
