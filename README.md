@@ -1,2 +1,2 @@
 # Components Library
-## Usefull and reusable comopenents
+### Usefull and reusable compenents
