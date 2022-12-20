@@ -1,0 +1,101 @@
+.toast-group {
+	position: fixed;
+	top: 15%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.toast {
+	--_radius: 3px;
+
+	--_c-success: 127, 37%;
+	--_c-warning: 33, 70%;
+	--_c-info: 176, 39%;
+	--_c-danger: 8, 100%;
+
+	margin-inline: auto;
+	width: min(400px, 40rem);
+	padding: 1em;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+
+	animation: toastInOut var(--_toast-animation-duration, 4000ms) cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
+
+	> p {
+		padding-right: 1.25rem;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 0.75rem;
+	}
+
+	// States
+	&--success {
+		background-color: hsl(var(--_c-success), 87%);
+		color: hsl(var(--_c-success), 11%);
+	}
+
+	&--info {
+		background-color: hsl(var(--_c-info), 87%);
+		color: hsl(var(--_c-info), 11%);
+	}
+
+	&--warning {
+		background-color: hsl(var(--_c-warning), 89%);
+		color: hsl(var(--_c-warning), 11%);
+	}
+
+	&--danger {
+		background-color: hsl(var(--_c-danger), 92%);
+		color: hsl(var(--_c-danger), 11%);
+	}
+
+	// If auto close is disabled
+	&.has-close-button {
+		animation: toastIn var(--_toast-animation-duration, 400ms) cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
+	}
+}
+
+.toast__close {
+	display: flex;
+	flex-shrink: 0;
+
+	margin-inline-start: auto;
+	font-size: 140%;
+	line-height: 1;
+
+	opacity: 0.3;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+@keyframes toastInOut {
+	0%,
+	100% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
+	10%,
+	90% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes toastIn {
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+
+	90% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

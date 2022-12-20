@@ -10,7 +10,38 @@
 </head>
 
 <body>
-
+	<div class="wrapper">
+		<button class="js-trigger-modal" data-modal-trigger="test-1" type="button">Open modal 1</button>
+		<button class="js-trigger-modal" data-modal-trigger="test-2" type="button">Open modal 2</button>
+	</div>
+	<div class="modal" data-modal="test-1" tabindex="-1" role="dialog" spellcheck="false">
+		<div class="modal__dialog" role="document">
+			<div class="modal__header">
+				<h3>Titre le modal #1</h3>
+				<button type="button" class="modal__close js-close-modal" aria-label="Fermer">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal__content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae fuga facere eaque alias sunt magni corrupti iste inventore ad ex dolores esse doloribus, sit optio atque? Commodi eveniet nisi praesentium.</p>
+			</div>
+		</div>
+	</div>
+	<div class="modal" data-modal="test-2" tabindex="-1" role="dialog" spellcheck="false">
+		<div class="modal__dialog" role="document">
+			<div class="modal__header">
+				<h3>Titre le modal #2</h3>
+				<button type="button" class="modal__close js-close-modal" aria-label="Fermer">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal__content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae fuga facere eaque alias sunt magni corrupti iste inventore ad ex dolores esse doloribus, sit optio atque? Commodi eveniet nisi praesentium.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae fuga facere eaque alias sunt magni corrupti iste inventore ad ex dolores esse doloribus, sit optio atque? Commodi eveniet nisi praesentium.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae fuga facere eaque alias sunt magni corrupti iste inventore ad ex dolores esse doloribus, sit optio atque? Commodi eveniet nisi praesentium.</p>
+			</div>
+		</div>
+	</div>
 	<script src="./modal.js"></script>
 </body>
 

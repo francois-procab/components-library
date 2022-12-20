@@ -4,7 +4,6 @@ const sass = require("gulp-dart-sass");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
-const fiber = require("fibers");
 
 // Styles compilation, autoprefixer and minification
 const styles = (done) => {
@@ -13,7 +12,6 @@ const styles = (done) => {
 		.pipe(
 			sass({
 				includePaths: ["./node_modules"],
-				fiber: fiber,
 			})
 		)
 		.on("error", sass.logError)

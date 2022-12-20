@@ -11,6 +11,10 @@ a {
 	text-decoration: none;
 }
 
+button {
+	font-size: 100%;
+}
+
 // Utils
 .wrapper {
 	width: min(100% - 2rem, 65rem);
@@ -18,7 +22,8 @@ a {
 	padding-block: 2rem;
 }
 
-// Burger : for example
+// Style not needed for components
+// Burger : Basic style to the nav for example
 .main-nav {
 	visibility: hidden;
 	transform: translateX(-10px);

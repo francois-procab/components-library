@@ -1,0 +1,65 @@
+.modal {
+	--_content-spacing: 1.5rem;
+	--_overlay-color: hsla(0, 0%, 0%, 30%);
+	--_content-w: 40rem;
+	--_content-max-h: 60vh;
+	--_radius: 0.3rem;
+
+	position: fixed;
+	inset: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: var(--_overlay-color);
+	backdrop-filter: blur(1px);
+
+	// Close State
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s linear;
+
+	// The box
+	&__dialog {
+		width: min(100% - 1.5rem, var(--_content-w));
+		max-height: var(--_content-max-h);
+		overflow-y: auto;
+		padding: var(--_content-spacing);
+
+		background-color: #fff;
+		border-radius: var(--_radius, 0);
+		box-shadow: 0 4px 10px -3px rgba($color: #000, $alpha: 0.2);
+
+		// Animate the box
+		transform: translateY(-50%);
+		opacity: 0;
+		transition: all 0.4s ease-in-out;
+	}
+
+	&__header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+
+		margin-block-end: var(--_content-spacing);
+	}
+
+	&__close {
+		flex-shrink: 0;
+		line-height: 1;
+		font-size: 140%;
+	}
+
+	// Open State
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+
+		// Animate the box
+		.modal__dialog {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}
