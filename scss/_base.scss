@@ -1,7 +1,3 @@
-:root {
-	--color-primary: #6f56d5;
-}
-
 body {
 	font-family: system-ui;
 }
@@ -23,6 +19,28 @@ button {
 }
 
 // Style not needed for components
+// Buttons
+.btn {
+	--_btn-py: 0.75rem;
+	--_btn-px: 1.5rem;
+	--_btn-c: #fff;
+	--_btn-bkg: var(--color-primary);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: var(--_btn-py) var(--_btn-px);
+	color: var(--_btn-c);
+
+	text-transform: uppercase;
+
+	user-select: none;
+	background-color: var(--_btn-bkg);
+	border: 1px solid;
+	border-radius: 0.45rem;
+}
+
 // Burger : Basic style to the nav for example
 .main-nav {
 	visibility: hidden;
