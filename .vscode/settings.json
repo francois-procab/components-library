@@ -1,0 +1,7 @@
+{
+	"git.ignoreLimitWarning": true,
+	"workbench.colorCustomizations": {
+		"statusBar.background": "#61ffca",
+		"statusBar.foreground": "#15141b",
+	},
+}

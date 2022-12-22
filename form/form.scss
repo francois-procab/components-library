@@ -14,10 +14,10 @@ form {
 	--_input-radius: 0.45rem;
 	--_input-px: var(--size-2);
 	--_input-height: 3rem;
-	--_input-border-c: #ccc;
+	--_input-border-c: var(--color-gray-100);
 	--_input-border-c-focus: var(--color-primary);
-	--_input-focus-c-shadow: #f4f1ff;
-	--_input-border-c-hover: #ccc;
+	--_input-focus-c-shadow: hsla(var(--base-primary-color), 90%, 1);
+	--_input-border-c-hover: var(--color-gray-300);
 	--_input-border-w: 1px;
 	--_input-bkg: #fff;
 	accent-color: var(--color-primary);
@@ -49,6 +49,10 @@ textarea {
 	&::placeholder {
 		color: inherit;
 		opacity: 0.8;
+	}
+
+	&:hover {
+		border-color: var(--_input-border-c-hover);
 	}
 
 	&:focus,

@@ -1,14 +1,56 @@
-:root {
-	--color-primary: #6f56d5;
+@use "sass:map";
 
-	--size-1: 0.5rem;
-	--size-2: 1rem;
-	--size-3: 1.5rem;
-	--size-4: 2rem;
-	--size-5: 2.5rem;
-	--size-6: 3rem;
-	--size-7: 3.5rem;
-	--size-8: 4rem;
-	--size-9: 4.5rem;
-	--size-10: 5rem;
+// Colors
+$base-colors: (
+	"primary": "251, 58%",
+	"gray": "0, 0%",
+);
+
+@debug map.get($base-colors, "primary");
+$primary-colors-scale: (
+	100: (
+		map-get($base-colors, "primary"),
+		70%,
+	),
+	// 300: hsl(@return map.get($base-colors, "primary"), 70%),
+	// 500: hsl(@return map.get($base-colors, "primary"), 56%),
+	// 700: hsl(@return map.get($base-colors, "primary"), 30%),
+	// 900: hsl(@return map.get($base-colors, "primary"), 10%),,,,,,
+);
+
+$space-base: 1rem;
+$spaces: (
+	1: $space-base * 0.5,
+	2: $space-base,
+	3: $space-base * 1.5,
+	4: $space-base * 2,
+	5: $space-base * 2.5,
+	6: $space-base * 3,
+	7: $space-base * 3.5,
+	8: $space-base * 4,
+	9: $space-base * 4.5,
+	10: $space-base * 5,
+);
+
+:root {
+	--base-primary-color: 251, 58%;
+	@each $name, $scale in $primary-colors-scale {
+		--color-primary-#{$name}: hsl(#{$scale});
+	}
+
+	// Gray Scale
+	--base-gray-color: 0, 0%;
+	--color-gray-100: hsl(var(--base-gray-color), 80%);
+	--color-gray-300: hsl(var(--base-gray-color), 60%);
+	--color-gray-500: hsl(var(--base-gray-color), 50%);
+	--color-gray-700: hsl(var(--base-gray-color), 30%);
+	--color-gray-900: hsl(var(--base-gray-color), 20%);
+
+	--color-base: var(--color-gray-900);
+	--color-primary: var(--color-primary-500);
+
+	// Sizes
+	@each $name, $space in $spaces {
+		--size-#{$name}: #{$space};
+	}
 }
