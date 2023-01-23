@@ -1,5 +1,3 @@
-const modalTriggers = document.querySelectorAll(".js-trigger-modal");
-
 if (modalTriggers.length) {
 	const modals = document.querySelectorAll(".modal");
 	const modalBtnsClose = document.querySelectorAll(".js-close-modal");
@@ -32,9 +30,7 @@ if (modalTriggers.length) {
 
 			if (video_src !== undefined && video_src !== null) {
 				const autoplay_src = e.currentTarget.getAttribute("data-autoplay");
-				const iframe = `<iframe src="${
-					video_src + autoplay_src
-				}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="iframe-video"></iframe>`;
+				const iframe = `<iframe src="${video_src + autoplay_src}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="iframe-video"></iframe>`;
 
 				modal.querySelector(".modal__content").innerHTML = iframe;
 			}

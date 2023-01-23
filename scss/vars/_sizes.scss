@@ -1,0 +1,16 @@
+@use "sass:map";
+
+$size-base: 1rem;
+$sizes: (
+	"00": $size-base * 0.25,
+	"0": $size-base * 0.5,
+	"1": $size-base,
+	"2": $size-base * 1.5,
+	"3": $size-base * 2,
+	"4": $size-base * 2.5,
+	"5": $size-base * 3,
+	"6": $size-base * 3.5,
+	"7": $size-base * 4,
+	"8": $size-base * 4.5,
+	"9": $size-base * 5,
+);

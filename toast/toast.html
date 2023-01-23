@@ -11,7 +11,27 @@
 
 <body>
 	<button type="button">Open toast</button>
-	<script src="./toast.js"></script>
+	<script type="module">
+		import { Toast } from './toast.js';
+
+		const getRandomItem = (arr) => {
+			// get random index value
+			const randomIndex = Math.floor(Math.random() * arr.length);
+			// get random item
+			const item = arr[randomIndex];
+			return item;
+		}
+
+		const states = ['success', 'info', 'warning', 'danger'];
+
+		document.querySelector("button").addEventListener("click", (e) => {
+			Toast({
+				message: "Message",
+				autoClose: false,
+				state: getRandomItem(states),
+			});
+		});
+	</script>
 </body>
 
 </html>

@@ -1,31 +1,51 @@
 .tabs {
-	border: 1px solid rgba(0, 0, 0, 0.125);
-	border-radius: 0.25rem;
+	--_bkg: #eee;
+	--_border-c: rgba(0, 0, 0, 0.125);
+	--_border-radius: 0.25rem;
+	--_btn-px: 1.25rem;
+	--_btn-py: 0.75rem;
+	--_pane-px: var(--_btn-px);
+	--_pane-py: 2rem;
+
+	// border: 1px solid var(--_border-c);
+	overflow: hidden;
 
 	&__nav {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-		background-color: var(--color-accent-x-light);
+		display: flex;
+		flex-flow: row nowrap;
+		position: relative;
+
+		overflow-x: auto;
+		overflow-y: hidden;
+		scroll-snap-type: x mandatory;
 	}
 
 	&__btn {
+		flex-shrink: 0;
+
 		position: relative;
-		padding: 1rem 1.25rem;
+		padding: var(--_btn-py) var(--_btn-px);
+		margin-bottom: -1px;
+		scroll-snap-align: center;
+		border-radius: var(--_border-radius);
+
 		cursor: pointer;
 		transition: opacity 0.3s;
 
 		&:not(.is-active) {
 			opacity: 0.6;
 
-			&:hover {
-				opacity: 1;
+			@media (hover: hover) {
+				&:hover {
+					opacity: 1;
+				}
 			}
 		}
 
 		&.is-active {
-			color: var(--color-accent);
-			background-color: #fff;
-			border-right: 1px solid rgba(0, 0, 0, 0.125);
-			border-left: 1px solid rgba(0, 0, 0, 0.125);
+			color: var(--color-secondary);
+			background-color: var(--_bkg);
+			border-color: var(--_border-c);
 
 			&::after {
 				content: "";
@@ -34,20 +54,18 @@
 				left: 0;
 				height: 1px;
 				width: 100%;
-				background-color: #fff;
+				background-color: inherit;
 			}
 		}
 
 		&:first-child {
-			&.is-active {
-				border-left: none;
-			}
+			border-left: 0;
 		}
 	}
 
 	&__pane {
 		display: none;
-		padding: 2rem 1.25rem;
+		padding-block: var(--_pane-py);
 
 		&.is-visible {
 			display: block;

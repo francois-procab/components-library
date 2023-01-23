@@ -1,0 +1,77 @@
+@use "sass:map";
+
+// Colors
+$base-colors: (
+	"primary": "251, 58%",
+	"secondary": "185, 34%",
+	"gray": "0, 0%",
+);
+
+$primary-colors-scale: (
+	"100": (
+		map-get($base-colors, "primary"),
+		90%,
+	),
+	"300": (
+		map-get($base-colors, "primary"),
+		70%,
+	),
+	"500": (
+		map-get($base-colors, "primary"),
+		56%,
+	),
+	"700": (
+		map-get($base-colors, "primary"),
+		30%,
+	),
+	"900": (
+		map-get($base-colors, "primary"),
+		10%,
+	),
+);
+
+$secondary-colors-scale: (
+	"100": (
+		map-get($base-colors, "secondary"),
+		90%,
+	),
+	"300": (
+		map-get($base-colors, "secondary"),
+		70%,
+	),
+	"500": (
+		map-get($base-colors, "secondary"),
+		56%,
+	),
+	"700": (
+		map-get($base-colors, "secondary"),
+		30%,
+	),
+	"900": (
+		map-get($base-colors, "secondary"),
+		10%,
+	),
+);
+
+$gray-colors-scale: (
+	"100": (
+		map-get($base-colors, "gray"),
+		90%,
+	),
+	"300": (
+		map-get($base-colors, "gray"),
+		70%,
+	),
+	"500": (
+		map-get($base-colors, "gray"),
+		56%,
+	),
+	"700": (
+		map-get($base-colors, "gray"),
+		30%,
+	),
+	"900": (
+		map-get($base-colors, "gray"),
+		10%,
+	),
+);

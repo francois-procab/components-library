@@ -17,10 +17,13 @@ const Toast = ({ message, state = "info", duration = "3000ms", autoClose = true 
 	);
 
 	const toast = toastContainer.lastElementChild;
-	toastClose = document.querySelector(".toast__close");
+	console.log(toast);
+	toastClose = document.querySelectorAll(".toast__close");
 
 	if (autoClose === false) {
-		toastClose.addEventListener("click", () => toast.remove());
+		[...toastClose].forEach((close) => {
+			close.addEventListener("click", () => close.parentNode.remove());
+		});
 	} else {
 		toast.addEventListener("animationend", () => toast.remove());
 	}
@@ -31,14 +34,6 @@ const initToast = () => {
 	toastContainer = document.querySelector(".toasts-group");
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-	initToast();
+document.addEventListener("DOMContentLoaded", initToast());
 
-	document.querySelector("button").addEventListener("click", (e) => {
-		Toast({
-			message: "Message",
-			autoClose: false,
-			state: "warning",
-		});
-	});
-});
+export { Toast };

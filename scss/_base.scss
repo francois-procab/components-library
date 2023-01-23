@@ -1,6 +1,11 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	color: var(--color-base);
 	font-family: system-ui;
+	background-color: hsl(var(--color-primary-hs), 98%);
 }
 
 a {
@@ -17,6 +22,19 @@ button {
 	width: min(100% - 2rem, 65rem);
 	margin-inline: auto;
 	padding-block: 2rem;
+}
+
+.section {
+	&--full-h {
+		display: grid;
+		place-content: center;
+		height: 100vh;
+		background-color: var(--_bg);
+	}
+}
+
+.components-heading {
+	padding-block-end: var(--size-4);
 }
 
 // Style not needed for components
