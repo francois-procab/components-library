@@ -1,3 +1,4 @@
+const modalTriggers = document.querySelectorAll("[data-modal-trigger]");
 if (modalTriggers.length) {
 	const modals = document.querySelectorAll(".modal");
 	const modalBtnsClose = document.querySelectorAll(".js-close-modal");

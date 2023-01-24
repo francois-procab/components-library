@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Floating Label</title>
+	<link rel="stylesheet" href="../dist/app.css">
+</head>
+
+<body>
+	<header class="component-header">
+		<a href="/" class="backlink">Back to components</a>
+	</header>
+	<main class="wrapper">
+		<form class="form">
+			<div class="form__heading">
+				<h2>Connexion</h2>
+			</div>
+			<div class="form__row">
+				<div class="form__field has-floating-label">
+					<label for="name">Name <span class="required-field">*</span></label>
+					<input type="text" name="name" id="name" placeholder="Walsh" required>
+				</div>
+				<div class="form__field has-floating-label">
+					<label for="firstname">Firstname <span class="required-field">*</span></label>
+					<input type="text" name="firstname" id="firstname" placeholder="Mikey" required>
+				</div>
+			</div>
+			<div class="form__row">
+				<div class="form__field has-floating-label">
+					<label for="email">E-mail <span class="required-field">*</span></label>
+					<input type="email" name="email" id="email" placeholder="mickey@goonies.com" required>
+				</div>
+			</div>
+			<div class="form__footer">
+				<button class="btn btn--fill" type="submit">Submit</button>
+			</div>
+		</form>
+	</main>
+	<script src="../dist/app.js"></script>
+</body>
+
+</html>

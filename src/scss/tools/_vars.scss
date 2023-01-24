@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "vars/index" as *;
+@use "../vars/index" as *;
 
 :root {
 	// HS colors value for hsl use
@@ -31,4 +31,6 @@
 	@each $name, $size in $sizes {
 		--size-#{$name}: #{$size};
 	}
+
+	// TODO: FONTS
 }

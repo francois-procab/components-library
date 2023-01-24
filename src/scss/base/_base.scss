@@ -1,10 +1,12 @@
+@use "../tools/mixins" as m;
+
 html {
 	scroll-behavior: smooth;
 }
 
 body {
 	color: var(--color-base);
-	font-family: system-ui;
+	font-family: "Inter", sans-serif;
 	background-color: hsl(var(--color-primary-hs), 98%);
 }
 
@@ -39,14 +41,11 @@ button {
 
 // Index page
 .components-group {
-	display: flex;
-	flex-direction: column;
-	gap: var(--size-3);
+	@include m.flex-columns($col: 2, $gap: 1rem);
 
 	> a {
 		display: flex;
 		align-items: center;
-		flex: 0 1 100%;
 
 		padding: var(--size-2);
 		color: #333;
@@ -65,12 +64,8 @@ button {
 	}
 }
 
-footer {
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	.backlink {
+.component-header {
+	> a {
 		display: flex;
 		gap: var(--size-1);
 		align-items: center;
@@ -110,6 +105,10 @@ footer {
 	background-color: var(--_btn-bkg);
 	border: 1px solid;
 	border-radius: 0.45rem;
+
+	&--fill {
+		width: 100%;
+	}
 }
 
 // Burger : Basic style to the nav for example

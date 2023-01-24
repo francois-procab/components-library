@@ -6,10 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Burger</title>
-	<link rel="stylesheet" href="../global.css">
+	<link rel="stylesheet" href="../dist/app.css">
 </head>
 
 <body>
+	<header class="component-header">
+		<a href="/" class="backlink">Back to components</a>
+	</header>
 	<main class="wrapper">
 		<button class="burger" data-state="closed" aria-controls="main-nav" aria-expanded="false" aria-label="Ouvrir le menu principal">
 			<span class="burger__icon"></span>
@@ -29,10 +32,7 @@
 			</ul>
 		</nav>
 	</main>
-	<footer>
-		<a href="/" class="backlink">Back to components</a>
-	</footer>
-	<script src="./burger.js"></script>
+	<script src="../dist/app.js"></script>
 </body>
 
 </html>
