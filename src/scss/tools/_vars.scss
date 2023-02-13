@@ -32,5 +32,17 @@
 		--size-#{$name}: #{$size};
 	}
 
-	// TODO: FONTS
+	// Fonts Families
+	--font-base: "poppins", sans-serif;
+	--font-heading: "poppins", sans-serif;
+
+	// Font sizes
+	@each $name, $size in $fonts-sizes {
+		--fz-#{$name}: #{$size};
+	}
+
+	// Font weights
+	@each $name, $weight in $fonts-weights {
+		--fw-#{$name}: #{$weight};
+	}
 }

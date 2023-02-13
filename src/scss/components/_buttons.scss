@@ -1,0 +1,58 @@
+// Group
+.btns-group {
+	display: flex;
+	align-items: center;
+	gap: var(--size-1);
+	flex-wrap: wrap;
+}
+
+// Buttons
+.btn {
+	--_btn-py: 0.5em;
+	--_btn-px: 1em;
+	--_btn-c: #fff;
+	--_btn-bkg: var(--color-gray-700);
+	--_btn-radius: 0.24rem;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: var(--_btn-py) var(--_btn-px);
+
+	color: var(--_btn-c);
+	font-size: var(--fz-0);
+
+	border-radius: var(--_btn-radius, 0);
+	background-color: var(--_btn-bkg);
+
+	user-select: none;
+	cursor: pointer;
+	transition: box-shadow 0.3s;
+
+	&:hover {
+		box-shadow: inset 0 0 100vmax rgba(#000000, 0.2);
+	}
+
+	&--primary {
+		--_btn-bkg: var(--color-primary);
+	}
+
+	&--secondary {
+		--_btn-bkg: var(--color-secondary);
+	}
+
+	&--dark {
+		--_btn-bkg: var(--color-gray-900);
+	}
+
+	&--light {
+		--_btn-c: var(--color-gray-900);
+		--_btn-bkg: var(--color-gray-100);
+	}
+
+	&--full {
+		--_btn-py: 0.75em;
+		width: 100%;
+	}
+}

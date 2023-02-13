@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../tools/functions" as *;
+
+$fonts-sizes: (
+	"00": fluid(12px, 14px),
+	"0": fluid(14px, 16px),
+	"1": fluid(18px, 20px),
+	"2": fluid(20px, 22px),
+	"3": fluid(24px, 30px),
+	"4": fluid(36px, 45px),
+	"5": fluid(60px, 80px),
+);
+
+$fonts-weights: (
+	// Font weights
+	"light": 300,
+	"regular": 400,
+	"medium": 500,
+	"semibold": 600,
+	"bold": 700,
+	"black": 900
+);
