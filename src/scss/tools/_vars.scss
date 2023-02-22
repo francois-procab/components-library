@@ -32,6 +32,11 @@
 		--size-#{$name}: #{$size};
 	}
 
+	// Fluid Sizes
+	@each $name, $size in $fluid-sizes {
+		--fluid-size-#{$name}: #{$size};
+	}
+
 	// Fonts Families
 	--font-base: "poppins", sans-serif;
 	--font-heading: "poppins", sans-serif;

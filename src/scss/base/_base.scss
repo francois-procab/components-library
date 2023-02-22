@@ -7,6 +7,7 @@ html {
 body {
 	color: var(--color-base);
 	font-family: "Inter", sans-serif;
+	font-size: var(--fz-0);
 	background-color: hsl(var(--color-primary-hs), 98%);
 }
 
@@ -19,6 +20,11 @@ button {
 	font-size: 100%;
 }
 
+h2 {
+	font-size: var(--fz-4);
+	line-height: 1;
+}
+
 // Utils
 .wrapper {
 	width: min(100% - 2rem, 65rem);
@@ -28,7 +34,7 @@ button {
 
 .flow {
 	> * {
-		margin-block-end: 1.5rem;
+		margin-block-end: var(--fluid-size-1);
 	}
 }
 
