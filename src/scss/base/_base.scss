@@ -26,6 +26,12 @@ button {
 	padding-block: 2rem;
 }
 
+.flow {
+	> * {
+		margin-block-end: 1.5rem;
+	}
+}
+
 .section {
 	&--full-h {
 		display: grid;

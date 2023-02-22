@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Burger</title>
+	<link rel="stylesheet" href="../dist/app.css">
+</head>
+
+<body>
+	<header class="component-header">
+		<a href="/" class="backlink">Back to components</a>
+	</header>
+	<main class="wrapper">
+		<ul class="menu">
+			<li class="menu__item">
+				<a href="#" class="menu__link">Accueil</a>
+			</li>
+			<li class="menu__item has-sub-menu">
+				<a href="#" class="menu__link">Produits</a>
+				<button class="menu-trigger" aria-label="Ouvrir le sous menu">
+					<svg aria-hidden="true" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 4">
+						<path fill="currentColor" fill-rule="evenodd" d="M2.798 3.034.676.913a.5.5 0 1 1 .707-.707l1.769 1.768L4.92.206a.5.5 0 1 1 .707.707L3.507 3.034a.498.498 0 0 1-.311.145h-.087a.498.498 0 0 1-.311-.145Z" />
+					</svg>
+				</button>
+				<ul class="sub-menu">
+					<li class="sub-menu__item has-sub-menu">
+						<a href="#" class="sub-menu__link">Boxe Anglaise</a>
+						<button class="menu-trigger" aria-label="Ouvrir le sous menu">
+							<svg aria-hidden="true" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 4">
+								<path fill="currentColor" fill-rule="evenodd" d="M2.798 3.034.676.913a.5.5 0 1 1 .707-.707l1.769 1.768L4.92.206a.5.5 0 1 1 .707.707L3.507 3.034a.498.498 0 0 1-.311.145h-.087a.498.498 0 0 1-.311-.145Z" />
+							</svg>
+						</button>
+						<ul class="sub-menu">
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Gants</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Chaussures</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Protège dent</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Bandes/mitaines</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sub-menu__item has-sub-menu">
+						<a href="#" class="sub-menu__link">Boxe Française</a>
+						<button class="menu-trigger" aria-label="Ouvrir le sous menu">
+							<svg aria-hidden="true" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 4">
+								<path fill="currentColor" fill-rule="evenodd" d="M2.798 3.034.676.913a.5.5 0 1 1 .707-.707l1.769 1.768L4.92.206a.5.5 0 1 1 .707.707L3.507 3.034a.498.498 0 0 1-.311.145h-.087a.498.498 0 0 1-.311-.145Z" />
+							</svg>
+						</button>
+						<ul class="sub-menu">
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Gants</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Chaussures</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Protège dent</a>
+							</li>
+							<li class="sub-menu__item">
+								<a href="#" class="sub-menu__link">Bandes/mitaines</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sub-menu__item">
+						<a href="#" class="sub-menu__link">Boxe Thaï</a>
+					</li>
+				</ul>
+			</li>
+			<li class="menu__item">
+				<a href="#" class="menu__link">Contact</a>
+			</li>
+		</ul>
+	</main>
+	<script src="../dist/app.js"></script>
+</body>
+
+</html>
