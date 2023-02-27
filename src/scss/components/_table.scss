@@ -1,0 +1,38 @@
+.table {
+	width: 100%;
+
+	border-width: 0;
+	border-style: solid;
+	border-collapse: collapse;
+
+	> thead {
+		vertical-align: bottom;
+
+		th {
+			background-color: var(--color-gray-100);
+		}
+	}
+
+	th {
+		text-align: -webkit-match-parent;
+	}
+
+	tr > td {
+		display: table-cell;
+		padding: 1rem 1.2rem;
+		border-bottom: 0.1rem solid #ccc;
+
+		&:first-child {
+			color: #8f9397;
+		}
+	}
+
+	tbody,
+	td,
+	tfoot,
+	th,
+	thead,
+	tr {
+		padding: 0.5rem 0.5rem;
+	}
+}

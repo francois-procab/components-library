@@ -9,11 +9,11 @@ form {
 	--_form-bkg: #fff;
 
 	--_input-radius: 0.45rem;
-	--_input-px: var(--size-2);
+	--_input-px: var(--size-3);
 	--_input-height: 3rem;
 	--_input-border-c: var(--color-gray-100);
 	--_input-border-c-focus: var(--color-primary);
-	--_input-focus-c-shadow: hsl(var(--color-primary-hs), 94%);
+	--_input-focus-c-shadow: hsla(var(--color-primary-hs), 94%, 0.8);
 	--_input-border-c-hover: var(--color-gray-300);
 	--_input-border-w: 1px;
 	--_input-bkg: #fff;
@@ -30,7 +30,7 @@ form {
 
 		--_input-border-c: var(--color-gray-900);
 		--_input-border-c-hover: var(--color-gray-700);
-		--_input-focus-c-shadow: hsl(var(--color-primary-hs), 54%);
+		--_input-focus-c-shadow: hsla(var(--color-primary-hs), 94%, 0.2);
 		--_color-icon: var(--color-gray-100);
 		--_color-icon-h: hsl(var(--color-primary-hs), 74%);
 	}
@@ -39,6 +39,8 @@ form {
 label {
 	display: flex;
 	margin-block-end: var(--size-1);
+
+	font-weight: var(--fw-medium);
 
 	.required-field {
 		font-size: 80%;
@@ -91,7 +93,7 @@ textarea {
 
 textarea {
 	--_input-height: 6rem;
-	padding-block: var(--size-1);
+	padding-block: var(--size-3);
 	resize: vertical;
 }
 
@@ -123,15 +125,15 @@ select {
 	padding: var(--size-3);
 
 	background-color: var(--_form-bkg);
-	border-radius: 0.9rem;
+	border-radius: 0.25rem;
 
 	& > *:not(:last-child) {
-		margin-block-end: var(--size-2);
+		margin-block-end: var(--size-3);
 	}
 
 	&__row {
 		display: flex;
-		gap: var(--size-2);
+		gap: var(--size-3);
 
 		@media screen and (max-width: 768px) {
 			flex-wrap: wrap;
@@ -144,7 +146,7 @@ select {
 		&--checkbox {
 			display: flex;
 			align-items: center;
-			gap: var(--size-1);
+			gap: var(--size-2);
 
 			> label {
 				margin-block-end: 0;
@@ -155,13 +157,13 @@ select {
 	&__footer {
 		display: flex;
 		justify-content: center;
-		margin-block-start: var(--size-2);
+		margin-block-start: var(--size-4);
 	}
 
 	&__search {
 		display: flex;
 		align-items: center;
-		gap: var(--size-1);
+		gap: var(--size-2);
 
 		button {
 			max-height: var(--_input-height);

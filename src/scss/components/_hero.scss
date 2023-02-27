@@ -1,0 +1,22 @@
+.hero {
+	height: 60dvh;
+
+	&__inner {
+		position: relative;
+		display: grid;
+	}
+
+	&__thumb,
+	&__content {
+		grid-area: 1/2;
+	}
+
+	&__thumb {
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}

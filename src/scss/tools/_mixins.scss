@@ -1,3 +1,5 @@
+@use "../tools/vars" as *;
+
 // Center Element
 @mixin align-center($direction: row) {
 	display: flex;
@@ -13,6 +15,6 @@
 	gap: $gap;
 
 	> * {
-		width: calc((100% / $col) - $gap + ($gap / $col));
+		width: min(100%, calc((100% / $col) - $gap + ($gap / $col)));
 	}
 }

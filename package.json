@@ -25,6 +25,7 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "pexels": "^1.4.0",
     "webpack": "^5.75.0"
   }
 }

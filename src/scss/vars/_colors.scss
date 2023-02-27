@@ -2,7 +2,7 @@
 
 // Colors
 $base-colors: (
-	"primary": "251, 58%",
+	"primary": "235, 99%",
 	"secondary": "185, 34%",
 	"gray": "0, 0%",
 );
@@ -10,19 +10,19 @@ $base-colors: (
 $primary-colors-scale: (
 	"100": (
 		map-get($base-colors, "primary"),
-		90%,
+		95%,
 	),
 	"300": (
 		map-get($base-colors, "primary"),
-		70%,
+		75%,
 	),
 	"500": (
 		map-get($base-colors, "primary"),
-		56%,
+		69%,
 	),
 	"700": (
 		map-get($base-colors, "primary"),
-		30%,
+		64%,
 	),
 	"900": (
 		map-get($base-colors, "primary"),

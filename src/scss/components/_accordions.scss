@@ -1,15 +1,24 @@
 .accordion {
 	--_panel-py: 1rem;
 	--_panel-px: 1rem;
+	--_panel-bkg-color: #fff;
 	--_panel-border-color: #ccc;
-	width: 100%;
+	--_panel-radius: 6px;
+	width: min(100%, 600px);
+	margin-inline: auto;
 
 	&__panel {
 		position: relative;
 
-		border-bottom: 1px solid var(--_panel-border-color);
+		background-color: var(--_panel-bkg-color);
+		border-radius: var(--_panel-radius);
+
 		overflow: hidden;
 		transition: all 0.5s ease-in-out;
+
+		&:not(:last-child) {
+			margin-block-end: var(--size-2);
+		}
 
 		&.is-active {
 			.accordion__btn::after {
@@ -39,7 +48,7 @@
 
 	&__content {
 		display: none;
-		padding: var(--_panel-py) var(--_panel-px);
+		padding: 0 var(--_panel-px) var(--_panel-py);
 
 		transition: height 0.35s ease-in-out;
 		overflow: hidden;

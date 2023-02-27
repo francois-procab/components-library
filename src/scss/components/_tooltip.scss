@@ -1,10 +1,18 @@
 .tooltip {
-	--_t-bkg: rgba(0, 0, 0, 1);
-	--_radius: 0.5em;
+	--_t-bkg: rgba(0, 0, 0, 0.8);
+	--_t-radius: 0.5em;
+	--_t-px: 0.5rem;
+	--_t-py: 0.5rem;
+	--_t-w: 8rem;
+	--_t-arrow-w: 12px;
 
 	position: relative;
 	isolation: isolate;
 	cursor: pointer;
+
+	&:not(.btn) {
+		border-bottom: 1px dotted;
+	}
 
 	&::before,
 	&::after {
@@ -20,28 +28,29 @@
 	&::before {
 		content: attr(data-tooltip);
 
-		padding: 0.5rem;
-		width: max-content;
+		padding: var(--_t-py) var(--_t-px);
+		width: var(--_t-w);
 
 		color: #fff;
+		text-align: center;
 		font-size: 80%;
 		text-transform: none;
 
 		background-color: var(--_t-bkg);
-		border-radius: var(--_radius);
+		border-radius: var(--_t-radius);
 
-		transform: translate(-50%, -120%);
+		transform: translate(-50%, calc(-100% + var(--_t-arrow-w) * -1));
 	}
 
 	&::after {
 		content: "";
 
-		width: 12px;
+		width: var(--_t-arrow-w);
 		aspect-ratio: 1;
 
 		background-color: var(--_t-bkg);
-		clip-path: polygon(50% 100%, 0 50%, 100% 50%);
-		transform: translate(-50%, -115%);
+		clip-path: polygon(44% 100%, 0 44%, 100% 44%);
+		transform: translate(-50%, calc(-100% + var(--_t-arrow-w) / 2 * -1));
 	}
 
 	&:hover {
@@ -52,55 +61,57 @@
 		}
 	}
 
-	&--right {
-		&::before,
-		&::after {
-			left: auto;
-			right: 0;
-			top: 50%;
+	@media (hover: hover) {
+		&--right {
+			&::before,
+			&::after {
+				left: auto;
+				right: 0;
+				top: 50%;
+			}
+
+			&::before {
+				transform: translate(calc(100% + var(--_t-arrow-w)), -50%);
+			}
+
+			&::after {
+				clip-path: polygon(50% 100%, 0 50%, 50% 0);
+				transform: translate(calc(100% + var(--_t-arrow-w) / 2), -50%);
+			}
 		}
 
-		&::before {
-			transform: translate(107%, -50%);
+		&--bottom {
+			&::before,
+			&::after {
+				top: auto;
+				bottom: 0;
+			}
+
+			&::before {
+				transform: translate(-50%, calc(100% + var(--_t-arrow-w)));
+			}
+
+			&::after {
+				clip-path: polygon(100% 54%, 0 54%, 54% 0);
+				transform: translate(-50%, calc(100% + var(--_t-arrow-w) / 2));
+			}
 		}
 
-		&::after {
-			clip-path: polygon(50% 100%, 0 50%, 50% 0);
-			transform: translate(130%, -50%);
-		}
-	}
+		&--left {
+			&::before,
+			&::after {
+				top: 50%;
+				left: 0;
+			}
 
-	&--bottom {
-		&::before,
-		&::after {
-			top: auto;
-			bottom: 0;
-		}
+			&::before {
+				transform: translate(calc(-100% + var(--_t-arrow-w) * -1), -50%);
+			}
 
-		&::before {
-			transform: translate(-50%, 120%);
-		}
-
-		&::after {
-			clip-path: polygon(100% 50%, 0 50%, 50% 0);
-			transform: translate(-50%, 115%);
-		}
-	}
-
-	&--left {
-		&::before,
-		&::after {
-			top: 50%;
-			left: 0;
-		}
-
-		&::before {
-			transform: translate(-107%, -50%);
-		}
-
-		&::after {
-			clip-path: polygon(100% 50%, 50% 0, 50% 100%);
-			transform: translate(-130%, -50%);
+			&::after {
+				clip-path: polygon(100% 50%, 50% 0, 50% 100%);
+				transform: translate(calc(-100% + var(--_t-arrow-w) / 2 * -1), -50%);
+			}
 		}
 	}
 }

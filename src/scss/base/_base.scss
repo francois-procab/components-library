@@ -7,12 +7,24 @@ html {
 body {
 	color: var(--color-base);
 	font-family: "Inter", sans-serif;
-	font-size: var(--fz-0);
+	font-size: var(--fz-1);
 	background-color: hsl(var(--color-primary-hs), 98%);
 }
 
-a {
-	color: var(--color-primary);
+a:not([class]) {
+	color: currentColor;
+}
+
+:focus {
+	outline: 2px dashed;
+	outline-offset: 0.25rem;
+}
+
+main:focus {
+	outline: none;
+}
+
+[href]:hover {
 	text-decoration: none;
 }
 
@@ -22,6 +34,7 @@ button {
 
 h2 {
 	font-size: var(--fz-4);
+	font-weight: var(--fw-medium);
 	line-height: 1;
 }
 
@@ -30,12 +43,6 @@ h2 {
 	width: min(100% - 2rem, 65rem);
 	margin-inline: auto;
 	padding-block: 2rem;
-}
-
-.flow {
-	> * {
-		margin-block-end: var(--fluid-size-1);
-	}
 }
 
 .section {
@@ -53,11 +60,10 @@ h2 {
 
 // Index page
 .components-group {
-	@include m.flex-columns($col: 2, $gap: 1rem);
-
 	> a {
 		display: flex;
 		align-items: center;
+		width: min(50%, 100%);
 
 		padding: var(--size-2);
 		color: #333;
@@ -106,5 +112,65 @@ h2 {
 	&.is-open {
 		visibility: visible;
 		transform: translateX(0);
+	}
+}
+
+// Load MOre
+.col-items {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.cards-actions {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--size-3);
+	width: max-content;
+	margin-inline: auto;
+	padding-block: var(--size-6);
+}
+
+.js-load-more {
+	display: flex;
+	padding: var(--size-3);
+
+	text-align: center;
+	border-radius: 3px;
+	font-size: var(--fz-00);
+	text-transform: uppercase;
+	letter-spacing: 0.15rem;
+
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+	transition: all 200ms ease-in-out;
+}
+
+.js-load-more:not([disabled]):hover {
+	box-shadow: 0 1px 9px rgba(0, 0, 0, 0.2);
+}
+
+.js-load-more[disabled] {
+	background-color: #eaeaea !important;
+}
+
+.range {
+	position: relative;
+	height: 8px;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 0.1em;
+
+	&__inner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: var(--_range);
+		background: var(--_bkg, lightblue);
+		border-radius: 0.1em;
 	}
 }

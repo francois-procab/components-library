@@ -1,35 +1,56 @@
 .toasts-group {
 	position: fixed;
-	top: 15%;
+	bottom: 5svh;
 	left: 50%;
+	width: min(350px, 40rem);
+
+	flex-direction: column;
+	gap: 0.5rem;
+
 	transform: translateX(-50%);
+	overflow: hidden;
+	height: 150px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0 0 auto 0;
+		height: 50px;
+		background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+	}
 }
 
 .toast {
-	--_radius: 3px;
+	--_toast-radius: 6px;
 
 	--_c-success: 127, 37%;
 	--_c-warning: 33, 70%;
 	--_c-info: 176, 39%;
 	--_c-danger: 8, 100%;
 
+	// position: absolute;
+	// inset: 0;
+
 	margin-inline: auto;
-	width: min(400px, 40rem);
 	padding: 1em;
+	height: 50px;
+	width: 100%;
 
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	gap: 1rem;
 
-	animation: toastInOut var(--_toast-animation-duration, 4000ms) cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
+	background-color: #fff;
+	box-shadow: 0 4px 12px #0000001a;
+	border-radius: var(--_toast-radius, 0);
+
+	// transform: translateY(var(--offset)) scale(var(--scale));
+	// opacity: var(--opacity);
+
+	//animation: toastInOut var(--_toast-animation-duration, 4000ms) cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
 
 	> p {
 		padding-right: 1.25rem;
-	}
-
-	&:not(:last-child) {
-		margin-bottom: 0.75rem;
 	}
 
 	// States
