@@ -37,6 +37,6 @@ blockquote {
 }
 
 .post {
-	width: min(100% - var(--fluid-size-3), 60ch);
+	width: min(100% - 1.5rem, 60ch);
 	margin-inline: auto;
 }

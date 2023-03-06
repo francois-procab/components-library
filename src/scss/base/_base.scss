@@ -13,11 +13,10 @@ body {
 
 a:not([class]) {
 	color: currentColor;
-}
 
-:focus {
-	outline: 2px dashed;
-	outline-offset: 0.25rem;
+	&:is(:focus, :hover) {
+		text-decoration: none;
+	}
 }
 
 main:focus {
@@ -36,6 +35,13 @@ h2 {
 	font-size: var(--fz-4);
 	font-weight: var(--fw-medium);
 	line-height: 1;
+}
+
+div:not(.post) img {
+	aspect-ratio: 16/9;
+	width: 100%;
+	object-fit: cover;
+	background-color: var(--color-primary-100);
 }
 
 // Utils

@@ -3,6 +3,7 @@
 	"workbench.colorCustomizations": {
 		"statusBar.background": "#ffca85",
 		"statusBar.foreground": "#29263c",
+		"statusBarItem.hoverBackground": "#daa258"
 	},
 	"liveServer.settings.port": 5501,
 }

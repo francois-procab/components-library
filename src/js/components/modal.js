@@ -1,67 +1,70 @@
-const modalTriggers = document.querySelectorAll("[data-modal-trigger]");
-if (modalTriggers.length) {
-	const modals = document.querySelectorAll(".modal");
-	const modalBtnsClose = document.querySelectorAll(".js-close-modal");
-	let video_src = "";
+export const Modal = (() => {
+	const showModal = (trigger) => {
+		const target = trigger.getAttribute("data-modal-trigger");
+		const modal = document.querySelector(`[data-modal="${target}"]`);
+
+		if (modal === null || modal === undefined) return;
+
+		modal.classList.add("is-visible");
+	};
 
 	const closeModal = () => {
-		modals.forEach((modal) => {
-			modal.classList.remove("is-visible");
+		const modals = document.querySelectorAll(".modal");
 
-			// If modal video, remove content
-			if (modal.dataset.modal == "video") {
-				modal.querySelector(".modal__content").innerHTML = "";
+		[].forEach.call(modals, (sub) => {
+			if (sub.classList.contains("is-visible")) {
+				sub.classList.remove("is-visible");
 			}
 		});
 	};
 
-	modalTriggers.forEach((trigger) => {
-		trigger.addEventListener("click", (e) => {
-			e.preventDefault();
+	const bindClose = () => {
+		const modalBtnsClose = document.querySelectorAll(".js-close-modal");
 
-			const target = e.currentTarget.getAttribute("data-modal-trigger");
-			const modal = document.querySelector(`[data-modal="${target}"]`);
-
-			if (modal === null || modal === undefined) return;
-
-			modal.classList.add("is-visible");
-
-			// Video Content
-			video_src = e.currentTarget.getAttribute("data-src");
-
-			if (video_src !== undefined && video_src !== null) {
-				const autoplay_src = e.currentTarget.getAttribute("data-autoplay");
-				const iframe = `<iframe src="${video_src + autoplay_src}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="iframe-video"></iframe>`;
-
-				modal.querySelector(".modal__content").innerHTML = iframe;
-			}
+		modalBtnsClose.forEach((closeBtn) => {
+			closeBtn.addEventListener("click", (e) => {
+				e.preventDefault();
+				closeModal();
+			});
 		});
-	});
 
-	modalBtnsClose.forEach((closeBtn) => {
-		closeBtn.addEventListener("click", (e) => {
-			e.preventDefault();
-			closeModal();
-		});
-	});
+		// Close modal when cliked outside
+		document.addEventListener(
+			"mouseup",
+			(e) => {
+				if (!e.target.closest(".modal__dialog")) {
+					closeModal();
+				}
+			},
+			false
+		);
 
-	document.addEventListener(
-		"mouseup",
-		(e) => {
-			// If user clicks inside the element, do nothing
-			if (!e.target.closest(".modal__dialog")) {
+		// Close modal when ESC key pressed
+		document.addEventListener("keydown", (evt) => {
+			evt = evt || window.event;
+
+			if (evt.code == "Escape") {
 				closeModal();
 			}
-		},
-		false
-	);
-
-	document.onkeydown = function (evt) {
-		evt = evt || window.event;
-
-		// on escape key close modal
-		if (evt.code == "Escape") {
-			closeModal();
-		}
+		});
 	};
-}
+
+	const init = () => {
+		const modalTriggers = document.querySelectorAll("[data-modal-trigger]");
+
+		modalTriggers.forEach((trigger) => {
+			trigger.addEventListener("click", (e) => {
+				e.preventDefault();
+				showModal(trigger);
+			});
+		});
+
+		bindClose();
+	};
+
+	return {
+		init: init,
+	};
+})();
+
+Modal.init();
