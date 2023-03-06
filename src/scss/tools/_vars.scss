@@ -54,4 +54,8 @@ $bp-small: "(max-width: 640px)";
 	@each $name, $weight in $fonts-weights {
 		--fw-#{$name}: #{$weight};
 	}
+
+	// Transitions
+	--trs-smooth: cubic-bezier(0.62, 0.16, 0.13, 1.01);
+	--trs-inertia: cubic-bezier(0.5, -0.53, 0.14, 1.23);
 }

@@ -42,11 +42,14 @@ export const Accordion = (() => {
 	};
 	const init = () => {
 		const accordion = document.querySelector(".accordion");
-		const accordionTriggers = accordion.querySelectorAll(".accordion__btn");
 
-		accordionTriggers.forEach((trigger) => {
-			togglePanel(trigger);
-		});
+		if (accordion) {
+			const accordionTriggers = accordion.querySelectorAll(".accordion__btn");
+
+			accordionTriggers.forEach((trigger) => {
+				togglePanel(trigger);
+			});
+		}
 	};
 	return {
 		init: init,
