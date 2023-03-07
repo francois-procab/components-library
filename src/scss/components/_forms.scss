@@ -202,13 +202,13 @@ select {
 		position: absolute;
 		top: 50%;
 		left: var(--_input-px);
-		padding-inline: var(--size-00);
+		padding-inline: var(--size-1);
 
 		background-color: var(--_form-bkg);
 		color: var(--color-gray-500);
 
 		transform: translateY(-50%);
-		transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s linear;
+		transition: transform 0.4s var(--trs-inertia), color 0.3s linear;
 	}
 
 	input::placeholder {
@@ -218,7 +218,7 @@ select {
 	&.label-is-floating {
 		label {
 			color: var(--color-gray-700);
-			transform: translateY(-150%) translateX(-1rem) scale(0.95);
+			transform: translateY(-150%) translateX(calc(var(--size-1) * -1)) scale(0.95);
 		}
 	}
 }

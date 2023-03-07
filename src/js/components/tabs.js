@@ -4,7 +4,7 @@ const tabPanes = document.getElementsByClassName("tabs__pane");
 
 let fadeTime = 200;
 
-const Tab = (() => {
+export const Tab = (() => {
 	const fadeOut = (target) => {
 		target.style.opacity = 1;
 		target.style.transition = `opacity ${fadeTime}ms`;
@@ -40,13 +40,16 @@ const Tab = (() => {
 		elt.target.setAttribute("aria-selected", true);
 		fadeIn(document.querySelector(`#${clickedTab}`));
 	};
+
 	const init = () => {
 		tabBtns.forEach((tab) => {
 			tab.addEventListener("click", triggerTab);
 		});
 	};
+
 	return {
 		init: init,
 	};
 })();
+
 Tab.init();

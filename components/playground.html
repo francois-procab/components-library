@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hero</title>
+	<link rel="stylesheet" href="../dist/app.css">
+</head>
+
+<body>
+	<header class="component-header">
+		<a href="/" class="backlink">Back to components</a>
+	</header>
+	<div class="wrapper">
+		<div id="app"></div>
+	</div>
+	<script>
+		const getGreeting = (name) => {
+			let wrap = document.createElement('div');
+			let h1 = document.createElement('h1');
+			let p = document.createElement('p');
+
+			// Add content
+			h1.textContent = `Hi ${name}!`;
+			p.textContent = 'How are you today ?';
+			wrap.appendChild(h1);
+			wrap.appendChild(p);
+
+			return wrap;
+		}
+		const renderGreeting = (name) => {
+			let app = document.querySelector('#app');
+			app.appendChild(getGreeting(name))
+		}
+
+		renderGreeting('mike')
+	</script>
+</body>
+
+</html>

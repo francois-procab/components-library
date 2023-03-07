@@ -1,13 +1,13 @@
 .tabs {
-	--_bkg: #eee;
-	--_border-c: rgba(0, 0, 0, 0.125);
+	--_bkg: #fff;
+	--_border-c: transparent;
 	--_border-radius: 0.25rem;
 	--_btn-px: 1.25rem;
 	--_btn-py: 0.75rem;
 	--_pane-px: var(--_btn-px);
 	--_pane-py: 2rem;
 
-	// border: 1px solid var(--_border-c);
+	border: 1px solid var(--_border-c, transparent);
 	overflow: hidden;
 
 	&__nav {
@@ -24,17 +24,18 @@
 		flex-shrink: 0;
 
 		position: relative;
+		margin-block-end: -1px;
 		padding: var(--_btn-py) var(--_btn-px);
-		margin-bottom: -1px;
+
 		scroll-snap-align: center;
+
 		border-radius: var(--_border-radius);
 
 		cursor: pointer;
-		transition: opacity 0.3s;
+		transition: opacity 0.3s var(--trs-smooth);
 
 		&:not(.is-active) {
-			opacity: 0.6;
-
+			opacity: 0.8;
 			@media (hover: hover) {
 				&:hover {
 					opacity: 1;
@@ -43,7 +44,7 @@
 		}
 
 		&.is-active {
-			color: var(--color-secondary);
+			color: var(--color-primary);
 			background-color: var(--_bkg);
 			border-color: var(--_border-c);
 
@@ -65,7 +66,9 @@
 
 	&__pane {
 		display: none;
-		padding-block: var(--_pane-py);
+		padding: var(--_pane-py);
+
+		background-color: var(--_bkg);
 
 		&.is-visible {
 			display: block;

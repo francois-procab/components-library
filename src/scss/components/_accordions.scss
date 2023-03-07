@@ -1,10 +1,12 @@
 .accordion {
+	--_accordion-w: 45rem;
 	--_panel-py: 1rem;
 	--_panel-px: 1rem;
 	--_panel-bkg-color: #fff;
 	--_panel-border-color: #ccc;
 	--_panel-radius: 6px;
-	width: min(100%, 600px);
+
+	width: min(100%, var(--_accordion-w, 600px));
 	margin-inline: auto;
 
 	&__panel {
@@ -34,6 +36,8 @@
 		justify-content: space-between;
 		gap: var(--size-3);
 
+		font-weight: var(--fw-medium);
+
 		padding: var(--_panel-py) var(--_panel-px);
 		width: 100%;
 
@@ -56,7 +60,9 @@
 		display: none;
 		padding: 0 var(--_panel-px) var(--_panel-py);
 
-		transition: height 0.35s ease-in-out;
+		font-size: var(--fz-0);
+
+		transition: height 0.35s var(--trs-smooth);
 		overflow: hidden;
 
 		.is-active & {
