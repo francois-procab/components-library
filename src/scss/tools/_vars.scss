@@ -2,8 +2,8 @@
 @use "../vars/index" as *;
 
 $bp-large: "(940.9px <= width)"; //"(min-width: 940.9px)";
-$bp-medium: "(min-width: 640.9px) and (max-width: 960px)";
-$bp-small: "(max-width: 640px)";
+$bp-medium: "(640.9px <= width <= 960px)"; // (min-width: 640.9px) and (max-width: 960px)";
+$bp-small: "(width <= 640px)";
 
 :root {
 	// HS colors value for hsl use
