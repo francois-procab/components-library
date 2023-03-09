@@ -5,9 +5,11 @@ const ShowHidePassword = (() => {
 		if (inputPassword.type === "password") {
 			inputPassword.setAttribute("type", "text");
 			e.currentTarget.classList.add("password-is-visible");
+			inputPassword.focus();
 		} else {
 			inputPassword.setAttribute("type", "password");
 			e.currentTarget.classList.remove("password-is-visible");
+			inputPassword.focus();
 		}
 	};
 

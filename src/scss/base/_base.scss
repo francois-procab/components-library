@@ -37,10 +37,12 @@ h2 {
 	line-height: 1;
 }
 
-div:not(.post) img {
-	aspect-ratio: 16/9;
+img {
 	width: 100%;
 	object-fit: cover;
+}
+
+img:not([src$=".png"]) {
 	background-color: var(--color-primary-100);
 }
 

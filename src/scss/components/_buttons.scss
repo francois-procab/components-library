@@ -1,4 +1,10 @@
 // Buttons
+.btns-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
 .btn {
 	--_btn-fz: var(--fz-0);
 	--_btn-py: 0.375rem;
@@ -107,5 +113,6 @@
 	svg {
 		width: 1.2em;
 		aspect-ratio: 1;
+		flex-shrink: 0;
 	}
 }

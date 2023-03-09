@@ -35,13 +35,6 @@
 	animation: spinner-border 0.75s linear infinite;
 }
 
-[class$="-group"] {
-	display: flex;
-	align-items: center;
-	gap: var(--size-3);
-	flex-wrap: wrap;
-}
-
 .mx-auto {
 	margin-inline: auto;
 }

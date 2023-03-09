@@ -1,15 +1,30 @@
-.card {
-	height: 15vh;
-	margin: 8px;
-	border-radius: 3px;
-	transition: all 200ms ease-in-out;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.cards-group {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: var(--size-4);
+}
 
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+.card {
+	--_card-direction: column;
+	--_card-radius: 0.55em;
+
+	position: relative;
+
+	display: flex;
+	flex-direction: var(--_card-direction);
+
+	border-radius: var(--_card-radius);
+	background-color: #fff;
+	box-shadow: var(--shadow-elevation-medium);
+
+	overflow: hidden;
+
+	&__thumb {
+		aspect-ratio: 1;
+		background-color: var(--color-primary-100);
+	}
+
+	&__content {
+		padding: var(--fluid-size-4);
 	}
 }
