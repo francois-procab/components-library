@@ -35,6 +35,7 @@
 	animation: spinner-border 0.75s linear infinite;
 }
 
+// Spacing
 .mx-auto {
 	margin-inline: auto;
 }
@@ -91,4 +92,39 @@
 
 .flow > * + * {
 	margin-block-start: var(--fluid-size-4, 1em);
+}
+
+// Sizes
+.w-100 {
+	width: 100%;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+// Ratios
+.ratio-1 {
+	aspect-ratio: 1;
+}
+
+.ratio-4-3 {
+	aspect-ratio: 4/3;
+}
+
+.ratio-3-4 {
+	aspect-ratio: 3/4;
+}
+
+.ratio-16-9 {
+	aspect-ratio: 16/9;
+}
+
+.ratio-21-9 {
+	aspect-ratio: 21/9;
+}
+
+// Texts
+.text-center {
+	text-align: center;
 }

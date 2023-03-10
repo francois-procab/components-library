@@ -16,8 +16,7 @@
 		border: 1px solid transparent;
 		border-radius: var(--_panel-radius);
 
-		overflow: hidden;
-		transition: all 0.6s var(--trs-inertia);
+		transition: transform 0.6s var(--trs-inertia);
 
 		&:not(:last-child) {
 			margin-block-end: var(--size-2);

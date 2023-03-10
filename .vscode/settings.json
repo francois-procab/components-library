@@ -1,8 +1,9 @@
 {
 	"git.ignoreLimitWarning": true,
 	"workbench.colorCustomizations": {
-		"statusBar.background": "#7163cf",
-		"statusBar.foreground": "#e5e3f6"
+		"statusBar.background": "#61ffca",
+		"statusBar.foreground": "#3d375e",
+		"statusBarItem.activeBackground": "#64c1a0"
 	},
-	"liveServer.settings.port": 5501,
+	"liveServer.settings.port": 5501
 }

@@ -12,15 +12,22 @@
 <body>
 	<header class="component-header">
 		<a href="/" class="backlink">Back to components</a>
+		<div class="wrapper">
+			<h1>Buttons</h1>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, rerum autem reiciendis similique enim adipisci, perferendis voluptas vero eveniet impedit odio, delectus consequatur labore cumque optio. Repellat voluptate facere assumenda!</p>
+		</div>
 	</header>
 	<main class="wrapper flow">
 		<h2>Default</h2>
 		<div class="btns-group">
-			<button href="#" class="btn">Button's Label</button>
-			<button href="#" class="btn" disabled>Button disabled</button>
-			<a href="#" class="btn btn--secondary">Secondary Button</a>
-			<a href="#" class="btn btn--light">Button's Label</a>
-			<a href="#" class="btn btn--dark">Button's Label</a>
+			<button href="#" class="btn">Primary button</button>
+			<a href="#" class="btn btn--secondary">Secondary button</a>
+			<a href="#" class="btn btn--light">Light button</a>
+			<a href="#" class="btn btn--dark">Dark button</a>
+			<a href="#" class="btn btn--danger">Danger button</a>
+			<a href="#" class="btn btn--warning">Warning button</a>
+			<a href="#" class="btn btn--info">Info button</a>
+			<a href="#" class="btn btn--success">Success button</a>
 		</div>
 		<h2>Outline</h2>
 		<div class="btns-group">
@@ -30,10 +37,10 @@
 		</div>
 		<h2>Sizes</h2>
 		<div class="btns-group">
-			<a href="#" class="btn btn--large">Button's Label</a>
-			<a href="#" class="btn">Button's Label</a>
-			<a href="#" class="btn btn--small">Button's Label</a>
-			<a href="#" class="btn btn--x-small">Button's Label</a>
+			<a href="#" class="btn btn--large">Large button</a>
+			<a href="#" class="btn">Default button</a>
+			<a href="#" class="btn btn--small">Small button</a>
+			<a href="#" class="btn btn--x-small">Very small button</a>
 		</div>
 		<h2>With Icon</h2>
 		<div class="btns-group">
@@ -59,6 +66,12 @@
 				Button's Label
 				<div class="spinner"><span class="visually-hidden">Chargement...</span></div>
 			</a>
+		</div>
+
+		<h2>States</h2>
+		<div class="btns-group">
+			<a href="#" class="btn">Normal</a>
+			<button href="#" class="btn" disabled aria-disabled="true">Disabled</button>
 		</div>
 	</main>
 	<script src="../dist/app.js"></script>

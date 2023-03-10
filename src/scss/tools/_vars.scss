@@ -11,25 +11,49 @@ $bp-small: "(width <= 640px)";
 		--color-#{$color}-hs: #{$value};
 	}
 
-	// Primary Colors Scale
+	// Primary colors Scale
 	@each $name, $value in $primary-colors-scale {
 		--color-primary-#{$name}: hsl(#{$value});
 	}
 
-	// Scondary Colors Scale
+	// Secondary colors Scale
 	@each $name, $value in $secondary-colors-scale {
 		--color-secondary-#{$name}: hsl(#{$value});
 	}
 
-	// Gray Colors Scale
+	// Danger colors Scale
+	@each $name, $value in $danger-colors-scale {
+		--color-danger-#{$name}: hsl(#{$value});
+	}
+
+	// Warning colors Scale
+	@each $name, $value in $warning-colors-scale {
+		--color-warning-#{$name}: hsl(#{$value});
+	}
+
+	// Info colors Scale
+	@each $name, $value in $info-colors-scale {
+		--color-info-#{$name}: hsl(#{$value});
+	}
+
+	// Success colors Scale
+	@each $name, $value in $success-colors-scale {
+		--color-success-#{$name}: hsl(#{$value});
+	}
+
+	// Gray colors Scale
 	@each $name, $value in $gray-colors-scale {
 		--color-gray-#{$name}: hsl(#{$value});
 	}
 
-	// Theme Colors
+	// Theme colors
 	--color-base: var(--color-gray-900);
 	--color-primary: var(--color-primary-500);
 	--color-secondary: var(--color-secondary-500);
+	--color-danger: var(--color-danger-500);
+	--color-warning: var(--color-warning-500);
+	--color-info: var(--color-info-500);
+	--color-success: var(--color-success-500);
 
 	// Sizes
 	@each $name, $size in $sizes {

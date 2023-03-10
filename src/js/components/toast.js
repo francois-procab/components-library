@@ -2,7 +2,7 @@ let toastContainer;
 let toastClose;
 
 // Make a toast
-export const Toast = ({ message, state = "info", duration = "3000ms", autoClose = true }) => {
+export const Toast = ({ message, state = "info", autoClose = true }) => {
 	// Set classes to toast wrappper
 	const cls = ["toast", `toast--${state}`];
 

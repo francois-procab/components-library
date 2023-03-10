@@ -6,8 +6,11 @@ const babel = require("gulp-babel");
 const cssnano = require("cssnano");
 const del = require("del");
 const plumber = require("gulp-plumber");
+
 const postcss = require("gulp-postcss");
 const sass = require("gulp-dart-sass");
+const purgecss = require("gulp-purgecss");
+
 const uglify = require("gulp-uglify");
 const webpack = require("webpack-stream");
 const webpackConfig = require("./webpack.config.js");
@@ -43,6 +46,20 @@ const styles = (done) => {
 	done();
 };
 
+const purgeCSS = (done) => {
+	return src(paths.dest + "*.css")
+		.pipe(
+			purgecss({
+				content: ["**/*.html"],
+				fontFace: true,
+				variables: true,
+				safelist: [/^js-/, /^is-/, /^has-/],
+			})
+		)
+		.pipe(dest(paths.dest));
+	done();
+};
+
 // Script minification
 const scripts = (done) => {
 	return src(paths.entryJs, { allowEmpty: true }).pipe(babel()).pipe(webpack(webpackConfig)).pipe(uglify()).pipe(dest(paths.dest));
@@ -51,11 +68,13 @@ const scripts = (done) => {
 
 // Watch Files
 const watchFiles = (done) => {
-	watch("./**/*.scss", styles);
+	watch(paths.styles, styles);
 	watch(paths.scripts, scripts);
 	done();
 };
 
 exports.styles = styles;
 exports.scripts = scripts;
+exports.purgeCSS = purgeCSS;
 exports.default = series(clean, parallel(styles, scripts), parallel(watchFiles));
+exports.build = series(clean, parallel(styles, scripts), parallel(purgeCSS));

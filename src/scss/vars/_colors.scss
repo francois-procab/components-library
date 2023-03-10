@@ -6,6 +6,10 @@ $base-colors: (
 	"primary": "248, 53%",
 	"secondary": "185, 34%",
 	"gray": "0, 0%",
+	"danger": "351, 88%",
+	"warning": "49, 89%",
+	"info": "199, 100%",
+	"success": "139, 80%",
 );
 
 $primary-colors-scale: (
@@ -23,11 +27,11 @@ $primary-colors-scale: (
 	),
 	"700": (
 		map-get($base-colors, "primary"),
-		64%,
+		50%,
 	),
 	"900": (
 		map-get($base-colors, "primary"),
-		10%,
+		30%,
 	),
 );
 
@@ -50,6 +54,98 @@ $secondary-colors-scale: (
 	),
 	"900": (
 		map-get($base-colors, "secondary"),
+		10%,
+	),
+);
+
+$danger-colors-scale: (
+	"100": (
+		map-get($base-colors, "danger"),
+		90%,
+	),
+	"300": (
+		map-get($base-colors, "danger"),
+		70%,
+	),
+	"500": (
+		map-get($base-colors, "danger"),
+		67%,
+	),
+	"700": (
+		map-get($base-colors, "danger"),
+		58%,
+	),
+	"900": (
+		map-get($base-colors, "danger"),
+		10%,
+	),
+);
+
+$warning-colors-scale: (
+	"100": (
+		map-get($base-colors, "warning"),
+		90%,
+	),
+	"300": (
+		map-get($base-colors, "warning"),
+		70%,
+	),
+	"500": (
+		map-get($base-colors, "warning"),
+		67%,
+	),
+	"700": (
+		map-get($base-colors, "warning"),
+		58%,
+	),
+	"900": (
+		map-get($base-colors, "warning"),
+		10%,
+	),
+);
+
+$info-colors-scale: (
+	"100": (
+		map-get($base-colors, "info"),
+		94%,
+	),
+	"300": (
+		map-get($base-colors, "info"),
+		78%,
+	),
+	"500": (
+		map-get($base-colors, "info"),
+		70%,
+	),
+	"700": (
+		map-get($base-colors, "info"),
+		60%,
+	),
+	"900": (
+		map-get($base-colors, "info"),
+		10%,
+	),
+);
+
+$success-colors-scale: (
+	"100": (
+		map-get($base-colors, "success"),
+		90%,
+	),
+	"300": (
+		map-get($base-colors, "success"),
+		80%,
+	),
+	"500": (
+		map-get($base-colors, "success"),
+		76%,
+	),
+	"700": (
+		map-get($base-colors, "success"),
+		64%,
+	),
+	"900": (
+		map-get($base-colors, "success"),
 		10%,
 	),
 );

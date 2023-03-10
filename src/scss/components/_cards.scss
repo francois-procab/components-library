@@ -1,7 +1,17 @@
 .cards-group {
+	--_gap: var(--size-4);
+
+	gap: var(--_gap);
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: var(--size-4);
+
+	&:not(:last-child) {
+		margin-block-end: var(--_gap);
+	}
+
+	&--horizontal {
+		grid-template-columns: 1fr;
+	}
 }
 
 .card {
@@ -20,11 +30,25 @@
 	overflow: hidden;
 
 	&__thumb {
-		aspect-ratio: 1;
 		background-color: var(--color-primary-100);
+		overflow: hidden;
+
+		img {
+			height: 100%;
+			object-position: center;
+		}
 	}
 
 	&__content {
 		padding: var(--fluid-size-4);
+		align-self: center;
+	}
+
+	&--horizontal {
+		--_card-direction: row;
+
+		.card__thumb {
+			width: 40dvh;
+		}
 	}
 }
