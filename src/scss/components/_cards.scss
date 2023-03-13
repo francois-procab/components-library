@@ -3,12 +3,13 @@
 
 	gap: var(--_gap);
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
 	&:not(:last-child) {
 		margin-block-end: var(--_gap);
 	}
 
+	// Modifiers
 	&--horizontal {
 		grid-template-columns: 1fr;
 	}
@@ -17,6 +18,8 @@
 .card {
 	--_card-direction: column;
 	--_card-radius: 0.55em;
+	--_card-bkg: #fff;
+	--_card-content-padding: var(--fluid-size-4);
 
 	position: relative;
 
@@ -24,7 +27,7 @@
 	flex-direction: var(--_card-direction);
 
 	border-radius: var(--_card-radius);
-	background-color: #fff;
+	background-color: var(--_card-bkg);
 	box-shadow: var(--shadow-elevation-medium);
 
 	overflow: hidden;
@@ -33,15 +36,21 @@
 		background-color: var(--color-primary-100);
 		overflow: hidden;
 
-		img {
+		:is(img, picture) {
 			height: 100%;
 			object-position: center;
 		}
 	}
 
 	&__content {
-		padding: var(--fluid-size-4);
+		padding: var(--_card-content-padding);
 		align-self: center;
+	}
+
+	&__title {
+		& + * {
+			margin-block-start: var(--size-2);
+		}
 	}
 
 	&--horizontal {
@@ -50,5 +59,9 @@
 		.card__thumb {
 			width: 40dvh;
 		}
+	}
+
+	&--reverse {
+		flex-direction: row-reverse;
 	}
 }

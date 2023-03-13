@@ -162,3 +162,12 @@
 		flex-shrink: 0;
 	}
 }
+
+// Links
+.link {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--size-2);
+
+	text-decoration: none;
+}

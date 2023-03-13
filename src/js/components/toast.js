@@ -51,7 +51,7 @@ export const Toast = ({ message, state = "info", autoClose = true }) => {
 	}
 };
 
-const initToast = () => {
+export const initToast = () => {
 	// Create toasts group
 	let toastsWrap = document.createElement("div");
 	toastsWrap.classList.add("toasts-group");
@@ -63,11 +63,14 @@ const initToast = () => {
 // Example for Toggle Toast (To move where it's needed)
 document.addEventListener("DOMContentLoaded", (e) => {
 	initToast();
-	document.querySelector(".btn").addEventListener("click", (e) => {
-		Toast({
-			message: "Mon super message dans un toast",
-			autoClose: false,
-			state: "info",
+	document.querySelectorAll(".btn").forEach((btn) => {
+		btn.addEventListener("click", (e) => {
+			console.log(btn.dataset.autoClose);
+			Toast({
+				message: btn.dataset.msg,
+				autoClose: btn.dataset.autoClose === "false" ? false : true,
+				state: btn.dataset.state,
+			});
 		});
 	});
 });

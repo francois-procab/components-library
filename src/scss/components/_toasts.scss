@@ -3,8 +3,9 @@
 	bottom: 5svh;
 	left: 50%;
 
+	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: var(--size-2);
 
 	transform: translateX(-50%);
 	overflow: hidden;
@@ -18,10 +19,10 @@
 .toast {
 	--_toast-radius: 6px;
 
-	--_c-success: 127, 37%;
-	--_c-warning: 33, 70%;
-	--_c-info: 176, 39%;
-	--_c-danger: 8, 100%;
+	--_c-success: var(--color-success-hs);
+	--_c-warning: var(--color-warning-hs);
+	--_c-info: var(--color-info-hs);
+	--_c-danger: var(--color-danger-hs);
 
 	// position: absolute;
 	// inset: 0;
@@ -32,7 +33,7 @@
 
 	display: flex;
 	align-items: baseline;
-	gap: 1rem;
+	gap: var(--size-3);
 
 	background-color: #fff;
 	box-shadow: 0 4px 12px #0000001a;
@@ -45,7 +46,6 @@
 
 	> p {
 		font-size: var(--fz-0);
-		padding-right: 1.25rem;
 	}
 
 	// States

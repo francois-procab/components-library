@@ -10,7 +10,7 @@
 	isolation: isolate;
 	cursor: pointer;
 
-	&:not(.btn) {
+	&:not(.btn, .copy-to-clipboard) {
 		border-bottom: 1px dotted;
 	}
 
@@ -19,6 +19,8 @@
 		position: absolute;
 		top: 0;
 		left: 50%;
+
+		z-index: 10;
 
 		opacity: 0;
 		visibility: hidden;
@@ -29,7 +31,7 @@
 		content: attr(data-tooltip);
 
 		padding: var(--_t-py) var(--_t-px);
-		width: var(--_t-w);
+		max-width: var(--_t-w);
 
 		color: #fff;
 		text-align: center;
