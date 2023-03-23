@@ -93,7 +93,7 @@
 }
 
 .wrapper {
-	width: min(100% - 3rem, 65rem);
+	width: min(100% - var(--size-7), 65rem);
 	margin-inline: auto;
 
 	&--center {

@@ -22,6 +22,39 @@ const copyToClipboard = (trigger, content) => {
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
+	const dataScroll = document.querySelectorAll("[data-scroll]");
+
+	if (dataScroll) {
+		dataScroll.forEach((trigger) => {
+			trigger.addEventListener("click", (e) => {
+				const scrollId = e.currentTarget.dataset.scroll;
+				window.scrollTo({
+					top: document.getElementById(scrollId),
+				});
+			});
+		});
+	}
+
+	const navPills = document.querySelectorAll(".pills__item");
+	if (navPills) {
+		navPills.forEach((pill) => {
+			pill.addEventListener("click", (e) => {
+				e.preventDefault();
+
+				[].forEach.call(navPills, (item) => {
+					item.classList.remove("is-active");
+				});
+
+				pill.classList.add("is-active");
+				pill.scrollIntoView({
+					behavior: "smooth",
+					block: "nearest",
+					inline: "center",
+				});
+			});
+		});
+	}
+
 	document.querySelectorAll("pre code").forEach((el) => {
 		hljs.highlightElement(el);
 	});
