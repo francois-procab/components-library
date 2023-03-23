@@ -339,3 +339,15 @@ p:is(code) {
 .btn.is-added {
 	background-color: var(--color-gray-500);
 }
+
+.swiper-slide {
+	display: grid;
+	place-content: center;
+	aspect-ratio: 4/3;
+
+	font-size: var(--fz-2);
+	color: #fff;
+
+	border-radius: 0.5rem;
+	background-color: var(--color-primary-300);
+}

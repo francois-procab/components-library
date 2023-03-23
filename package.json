@@ -26,8 +26,11 @@
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "glob": "^9.3.2",
     "highlight.js": "^11.7.0",
     "pexels": "^1.4.0",
-    "webpack": "^5.75.0"
+    "swiper": "^9.1.1",
+    "webpack": "^5.75.0",
+    "webpack-glob-loader": "^1.0.0"
   }
 }

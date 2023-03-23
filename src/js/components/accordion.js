@@ -1,36 +1,39 @@
 import { slideUp, slideDown } from "../tools/utils.js";
 
 export const Accordion = (() => {
+	const toggleAnimation = (trigger, content) => {
+		content.addEventListener(
+			"transitionrun",
+			() => {
+				trigger.classList.remove("is-active");
+			},
+			{ once: true }
+		);
+	};
+
 	const togglePanel = (trigger) => {
 		const accordion = document.querySelector(".accordion");
 		let speedAnimation = 300;
 		const accordionPanels = accordion.querySelectorAll(".accordion__panel");
+
+		accordionPanels.forEach((pan) => {
+			if (pan.classList.contains("is-active")) {
+				pan.querySelector(".accordion__content").style.boxSizing = "border-box";
+				pan.querySelector(".accordion__content").style.display = "block";
+			}
+		});
 
 		trigger.addEventListener("click", (e) => {
 			const panel = trigger.parentNode.parentNode.querySelector(".accordion__content");
 
 			if (e.target.parentNode.parentNode.classList.contains("is-active")) {
 				slideUp(panel, speedAnimation);
-
-				panel.addEventListener(
-					"transitionrun",
-					() => {
-						trigger.parentNode.parentNode.classList.remove("is-active");
-					},
-					{ once: true }
-				);
+				toggleAnimation(trigger.parentNode.parentNode, panel);
 			} else {
-				accordionPanels.forEach(function (item) {
+				accordionPanels.forEach((item) => {
 					if (item.classList.contains("is-active")) {
 						slideUp(item.querySelector(".accordion__content"), speedAnimation);
-
-						item.querySelector(".accordion__content").addEventListener(
-							"transitionrun",
-							() => {
-								item.classList.remove("is-active");
-							},
-							{ once: true }
-						);
+						toggleAnimation(item, item.querySelector(".accordion__content"));
 					}
 				});
 
@@ -40,6 +43,7 @@ export const Accordion = (() => {
 			}
 		});
 	};
+
 	const init = () => {
 		const accordion = document.querySelector(".accordion");
 
@@ -51,6 +55,7 @@ export const Accordion = (() => {
 			});
 		}
 	};
+
 	return {
 		init: init,
 	};

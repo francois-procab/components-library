@@ -65,6 +65,7 @@
 		overflow: hidden;
 
 		.is-active & {
+			box-sizing: border-box;
 			display: block;
 		}
 	}

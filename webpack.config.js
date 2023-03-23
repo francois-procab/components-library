@@ -4,6 +4,7 @@ const src = path.resolve(__dirname, "src");
 module.exports = {
 	entry: {
 		app: src + "/js/app.js",
+		sliders: src + "/js/layouts/cp-slider.js",
 	},
 	output: {
 		filename: "[name].js",
