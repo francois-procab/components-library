@@ -1,7 +1,8 @@
 import hljs from "highlight.js/lib/core";
 import xml from "highlight.js/lib/languages/xml";
-hljs.registerLanguage("xml", xml);
 import javascript from "highlight.js/lib/languages/javascript";
+
+hljs.registerLanguage("xml", xml);
 hljs.registerLanguage("javascript", javascript);
 
 const copyToClipboard = (trigger, content) => {

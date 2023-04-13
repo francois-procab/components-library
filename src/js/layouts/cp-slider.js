@@ -3,7 +3,7 @@ import Slider from "../components/sliders.js";
 document.addEventListener("DOMContentLoaded", (event) => {
 	const sliders = document.querySelectorAll(".swiper");
 	sliders.forEach((slider) => {
-		Slider.initSlider(slider, {
+		Slider.initSwiper(slider, {
 			spaceBetween: 20,
 			breakpoints: {
 				// when window width is >= 480px

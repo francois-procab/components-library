@@ -236,6 +236,9 @@ swiper-container:not(.swiper-watch-progress),
 
 	background-color: var(--color-gray-300);
 	border-radius: 100vmax;
+
+	user-select: none;
+	cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {

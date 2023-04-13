@@ -1,14 +1,16 @@
 // Tabs
-const tabBtns = document.querySelectorAll(".tabs__btn");
-const tabPanes = document.getElementsByClassName("tabs__pane");
+const $tabBtns = document.querySelectorAll(".tabs__btn");
+const $tabPanes = document.getElementsByClassName("tabs__pane");
 
-let fadeTime = 200;
+let fadeTime = 300;
 
 export const Tab = (() => {
 	const fadeOut = (target) => {
 		target.style.opacity = 1;
-		target.style.transition = `opacity ${fadeTime}ms`;
+		target.style.transform = "translateY(0)";
+		target.style.transition = `all ${fadeTime}ms linear`;
 		target.style.opacity = 0;
+		target.style.transform = "translateY(10%)";
 		setTimeout(() => {
 			target.style.display = "none";
 		}, fadeTime);
@@ -16,8 +18,10 @@ export const Tab = (() => {
 
 	const fadeIn = (target) => {
 		target.style.opacity = 0;
-		target.style.transition = `opacity ${fadeTime}ms`;
+		target.style.transform = "translateY(10%)";
+		target.style.transition = `all ${fadeTime}ms linear`;
 		target.style.opacity = 1;
+		target.style.transform = "translateY(0)";
 		setTimeout(() => {
 			target.style.display = "block";
 		}, fadeTime);
@@ -27,12 +31,12 @@ export const Tab = (() => {
 		elt.preventDefault();
 		const clickedTab = elt.target.dataset.tabTarget;
 
-		tabBtns.forEach((btn) => {
+		$tabBtns.forEach((btn) => {
 			btn.classList.remove("is-active");
 			btn.setAttribute("aria-selected", false);
 		});
 
-		[].forEach.call(tabPanes, (pane) => {
+		[].forEach.call($tabPanes, (pane) => {
 			fadeOut(pane);
 		});
 
@@ -42,7 +46,7 @@ export const Tab = (() => {
 	};
 
 	const init = () => {
-		tabBtns.forEach((tab) => {
+		$tabBtns.forEach((tab) => {
 			tab.addEventListener("click", triggerTab);
 		});
 	};

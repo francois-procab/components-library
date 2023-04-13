@@ -73,6 +73,12 @@ const watchFiles = (done) => {
 	done();
 };
 
+// Includes HTMLS Partials
+const htmlIncludes = (done) => {
+	return src(["./index.html", "./components/*.html"]).pipe(plumber()).pipe(htmlImport("./partials/")).pipe(dest("./dist/"));
+	done();
+};
+
 exports.styles = styles;
 exports.scripts = scripts;
 exports.purgeCSS = purgeCSS;

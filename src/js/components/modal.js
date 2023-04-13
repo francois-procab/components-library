@@ -1,27 +1,27 @@
 export const Modal = (() => {
 	const showModal = (trigger) => {
-		const target = trigger.getAttribute("data-modal-trigger");
-		const modal = document.querySelector(`[data-modal="${target}"]`);
+		const $target = trigger.getAttribute("data-modal-trigger");
+		const $modal = document.querySelector(`[data-modal="${$target}"]`);
 
-		if (modal === null || modal === undefined) return;
+		if ($modal === null || $modal === undefined) return;
 
-		modal.classList.add("is-visible");
+		$modal.classList.add("is-visible");
 	};
 
 	const closeModal = () => {
-		const modals = document.querySelectorAll(".modal");
+		const $modals = document.querySelectorAll(".modal");
 
-		[].forEach.call(modals, (sub) => {
-			if (sub.classList.contains("is-visible")) {
-				sub.classList.remove("is-visible");
+		[].forEach.call($modals, (modal) => {
+			if (modal.classList.contains("is-visible")) {
+				modal.classList.remove("is-visible");
 			}
 		});
 	};
 
 	const bindClose = () => {
-		const modalBtnsClose = document.querySelectorAll(".js-close-modal");
+		const $modalBtnsClose = document.querySelectorAll(".js-close-modal");
 
-		modalBtnsClose.forEach((closeBtn) => {
+		$modalBtnsClose.forEach((closeBtn) => {
 			closeBtn.addEventListener("click", (e) => {
 				e.preventDefault();
 				closeModal();
@@ -50,9 +50,9 @@ export const Modal = (() => {
 	};
 
 	const init = () => {
-		const modalTriggers = document.querySelectorAll("[data-modal-trigger]");
+		const $modalTriggers = document.querySelectorAll("[data-modal-trigger]");
 
-		modalTriggers.forEach((trigger) => {
+		$modalTriggers.forEach((trigger) => {
 			trigger.addEventListener("click", (e) => {
 				e.preventDefault();
 				showModal(trigger);
@@ -67,4 +67,6 @@ export const Modal = (() => {
 	};
 })();
 
-Modal.init();
+Modal.init({
+	header: false,
+});

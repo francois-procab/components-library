@@ -27,7 +27,11 @@ export const Accordion = (() => {
 			const panel = trigger.parentNode.parentNode.querySelector(".accordion__content");
 
 			if (e.target.parentNode.parentNode.classList.contains("is-active")) {
-				slideUp(panel, speedAnimation);
+				if (slideUp != undefined && slideUp != null) {
+					slideUp(panel, speedAnimation);
+				} else {
+					panel.style.display = "block";
+				}
 				toggleAnimation(trigger.parentNode.parentNode, panel);
 			} else {
 				accordionPanels.forEach((item) => {
