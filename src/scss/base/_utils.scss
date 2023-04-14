@@ -102,7 +102,15 @@
 }
 
 .flow > * + * {
-	margin-block-start: var(--fluid-size-4, 1em);
+	margin-block-end: var(--flow-space, var(--fluid-size-4));
+}
+
+:is(h1, h2, h3, blockquote) {
+	--flow-space: var(--fluid-size-5);
+}
+
+:is(h1, h2, h3) + * {
+	--flow-space: var(--fluid-size-3);
 }
 
 // Sizes

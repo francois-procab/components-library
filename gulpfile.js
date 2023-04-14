@@ -6,7 +6,7 @@ const babel = require("gulp-babel");
 const cssnano = require("cssnano");
 const del = require("del");
 const plumber = require("gulp-plumber");
-
+const sourcemaps = require("gulp-sourcemaps");
 const postcss = require("gulp-postcss");
 const sass = require("gulp-dart-sass");
 const purgecss = require("gulp-purgecss");
@@ -14,6 +14,11 @@ const purgecss = require("gulp-purgecss");
 const uglify = require("gulp-uglify");
 const webpack = require("webpack-stream");
 const webpackConfig = require("./webpack.config.js");
+
+const argv = require("yargs").argv;
+const gulpIf = require("gulp-if");
+
+const production = argv.prod ? true : false;
 
 // Paths
 const paths = {
@@ -41,7 +46,7 @@ const styles = (done) => {
 			})
 		)
 		.on("error", sass.logError)
-		.pipe(postcss([autoprefixer(), cssnano()]))
+		.pipe(gulpIf(production, postcss([autoprefixer(), cssnano()])))
 		.pipe(dest(paths.dest));
 	done();
 };

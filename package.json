@@ -21,13 +21,15 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "gulp-purgecss": "^5.0.0",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.1",
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
+    "gulp-if": "^3.0.0",
     "highlight.js": "^11.7.0",
     "swiper": "^9.1.1",
-    "webpack": "^5.75.0"
+    "webpack": "^5.75.0",
+    "yargs": "^17.7.1"
   }
 }

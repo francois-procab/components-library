@@ -37,12 +37,6 @@ blockquote {
 	border-left: 5px solid;
 }
 
-p {
-	& + & {
-		margin-block-start: var(--size-3);
-	}
-}
-
 .post {
 	width: min(100% - 1.5rem, 60ch);
 	margin-inline: auto;
