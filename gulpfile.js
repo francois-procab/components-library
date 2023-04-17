@@ -46,7 +46,7 @@ const styles = (done) => {
 			})
 		)
 		.on("error", sass.logError)
-		.pipe(gulpIf(production, postcss([autoprefixer(), cssnano()])))
+		.pipe(postcss([autoprefixer(), cssnano()]))
 		.pipe(dest(paths.dest));
 	done();
 };
