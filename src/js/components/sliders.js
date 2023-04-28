@@ -1,5 +1,5 @@
-import Swiper, { Navigation, Pagination, EffectFade } from "swiper";
-Swiper.use([Navigation, Pagination, EffectFade]);
+import Swiper, { Autoplay, Navigation, Pagination, EffectFade } from "swiper";
+Swiper.use([Autoplay, Navigation, Pagination, EffectFade]);
 
 let Slider = {};
 

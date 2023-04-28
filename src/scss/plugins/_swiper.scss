@@ -244,3 +244,12 @@ swiper-container:not(.swiper-watch-progress),
 .swiper-pagination-bullet-active {
 	background-color: var(--color-primary);
 }
+
+.swiper-progress-bar {
+	margin-block-start: var(--size-4);
+	width: var(--_w, 5rem);
+	height: 0.35rem;
+	aspect-ratio: 0;
+	background-color: var(--color-primary);
+	border-radius: 100vmax;
+}

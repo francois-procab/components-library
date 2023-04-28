@@ -440,3 +440,38 @@ p:is(code) {
 		--_color: hsl(var(--color-danger-hs), 30%);
 	}
 }
+
+// GRIDS
+.grid {
+	--_gap: var(--size-4);
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--_gap);
+
+	@for $i from 1 through 12 {
+		&--#{$i} {
+			--_columns: #{$i};
+		}
+	}
+
+	> * {
+		@media #{t.$bp-large}, #{t.$bp-medium} {
+			width: calc((100% / var(--_columns)) - var(--_gap) + (var(--_gap) / var(--_columns)));
+		}
+
+		@media #{t.$bp-small} {
+			width: 100%;
+		}
+	}
+
+	& + & {
+		margin-block-start: var(--size-4);
+	}
+}
+
+.item {
+	flex: 0 1 auto;
+	height: 120px;
+	background-color: var(--color-primary-100);
+	border-radius: 0.25rem;
+}

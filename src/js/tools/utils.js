@@ -3,6 +3,28 @@ const getRandomColor = () => {
 	return `hsl(${h}deg, 90%, 85%)`;
 };
 
+const fadeTime = 300;
+
+const fadeOut = (target) => {
+	target.style.opacity = 1;
+	target.style.transition = `opacity ${fadeTime}ms`;
+	target.style.opacity = 0;
+
+	setTimeout(() => {
+		target.style.display = "none";
+	}, fadeTime);
+};
+
+const fadeIn = (target) => {
+	target.style.opacity = 0;
+	target.style.transition = `opacity ${fadeTime}ms`;
+	target.style.opacity = 1;
+
+	setTimeout(() => {
+		target.style.display = "block";
+	}, fadeTime);
+};
+
 const slideUp = (target, duration = 500) => {
 	target.style.transitionProperty = "height, margin, padding";
 	target.style.transitionDuration = duration + "ms";
@@ -68,6 +90,11 @@ const slideToggle = (target, duration = 500) => {
 	}
 };
 
+const setActive = (el) => {
+	[...el.parentElement.children].forEach((sib) => sib.classList.remove("is-active"));
+	el.classList.add("is-active");
+};
+
 /**
  * Get the value of a cookie
  * Source: https://gist.github.com/wpsmith/6cf23551dd140fb72ae7
@@ -80,4 +107,4 @@ function getCookie(name) {
 	if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-export { getRandomColor, slideUp, slideDown, slideToggle, getCookie };
+export { getRandomColor, slideUp, slideDown, slideToggle, getCookie, fadeOut, fadeIn, fadeTime, setActive };

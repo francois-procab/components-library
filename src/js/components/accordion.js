@@ -12,9 +12,9 @@ export const Accordion = (() => {
 	};
 
 	const togglePanel = (trigger) => {
-		const accordion = document.querySelector(".accordion");
-		let speedAnimation = 300;
+		const accordion = trigger.parentNode.parentNode.parentNode;
 		const accordionPanels = accordion.querySelectorAll(".accordion__panel");
+		let speedAnimation = 300;
 
 		accordionPanels.forEach((pan) => {
 			if (pan.classList.contains("is-active")) {
@@ -42,22 +42,17 @@ export const Accordion = (() => {
 				});
 
 				trigger.parentNode.parentNode.classList.add("is-active");
-
 				slideDown(panel, speedAnimation);
 			}
 		});
 	};
 
 	const init = () => {
-		const accordion = document.querySelector(".accordion");
+		const accordionTriggers = document.querySelectorAll(".accordion__btn");
 
-		if (accordion) {
-			const accordionTriggers = accordion.querySelectorAll(".accordion__btn");
-
-			accordionTriggers.forEach((trigger) => {
-				togglePanel(trigger);
-			});
-		}
+		accordionTriggers.forEach((trigger) => {
+			togglePanel(trigger);
+		});
 	};
 
 	return {

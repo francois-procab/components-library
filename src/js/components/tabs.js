@@ -1,51 +1,34 @@
 // Tabs
-const $tabBtns = document.querySelectorAll(".tabs__btn");
-const $tabPanes = document.getElementsByClassName("tabs__pane");
+import { fadeIn, fadeOut } from "../tools/utils.js";
 
-let fadeTime = 300;
-
-export const Tab = (() => {
-	const fadeOut = (target) => {
-		target.style.opacity = 1;
-		target.style.transform = "translateY(0)";
-		target.style.transition = `all ${fadeTime}ms linear`;
-		target.style.opacity = 0;
-		target.style.transform = "translateY(10%)";
-		setTimeout(() => {
-			target.style.display = "none";
-		}, fadeTime);
-	};
-
-	const fadeIn = (target) => {
-		target.style.opacity = 0;
-		target.style.transform = "translateY(10%)";
-		target.style.transition = `all ${fadeTime}ms linear`;
-		target.style.opacity = 1;
-		target.style.transform = "translateY(0)";
-		setTimeout(() => {
-			target.style.display = "block";
-		}, fadeTime);
-	};
-
+export const Tabs = (() => {
 	const triggerTab = (elt) => {
 		elt.preventDefault();
-		const clickedTab = elt.target.dataset.tabTarget;
+		const trigger = elt.target;
+		const clickedTab = trigger.dataset.tabTarget;
+		const tabPanes = trigger.parentNode.parentNode.querySelectorAll(".tabs__pane");
 
-		$tabBtns.forEach((btn) => {
-			btn.classList.remove("is-active");
-			btn.setAttribute("aria-selected", false);
-		});
+		// Remove attributes and class on siblings
+		for (let sibling of trigger.parentNode.children) {
+			if (sibling !== elt) {
+				sibling.classList.remove("is-active");
+				sibling.setAttribute("aria-selected", false);
+			}
+		}
 
-		[].forEach.call($tabPanes, (pane) => {
+		// Close all tab panes
+		[].forEach.call(tabPanes, (pane) => {
 			fadeOut(pane);
 		});
 
+		// Set active class and attributes and show pane
 		elt.target.classList.add("is-active");
 		elt.target.setAttribute("aria-selected", true);
 		fadeIn(document.querySelector(`#${clickedTab}`));
 	};
 
 	const init = () => {
+		const $tabBtns = document.querySelectorAll(".tabs__btn");
 		$tabBtns.forEach((tab) => {
 			tab.addEventListener("click", triggerTab);
 		});
@@ -56,4 +39,4 @@ export const Tab = (() => {
 	};
 })();
 
-Tab.init();
+Tabs.init();
