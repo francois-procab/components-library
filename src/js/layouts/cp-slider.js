@@ -5,6 +5,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	sliders.forEach((slider) => {
 		Slider.initSwiper(slider, {
 			spaceBetween: 20,
+			pagination: {
+				el: slider.querySelector(".swiper-pagination"),
+				dynamicBullets: true,
+				dynamicMainBullets: 1,
+				type: "bullets",
+				clickable: true,
+			},
+			navigation: {
+				nextEl: slider.querySelector(".swiper-button--next"),
+				prevEl: slider.querySelector(".swiper-button--prev"),
+			},
 			breakpoints: {
 				// when window width is >= 480px
 				480: {
@@ -23,10 +34,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	const sliderAutoFill = document.querySelector(".slider-auto-fill");
 	let autoPlayDelay = 2500;
 
-	let mySwiper = Slider.initSwiper(sliderAutoFill, {
+	Slider.initSwiper(sliderAutoFill, {
 		on: {
 			init: (el) => {
-				console.log(el);
 				el.pagination.el.style.setProperty("--_delay", `${autoPlayDelay}ms`);
 			},
 		},
@@ -42,7 +52,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		},
 	});
 
-	mySwiper.on("init", (el) => {
-		console.log(el);
+	const infiniteSlider = document.querySelector(".slider-infinite");
+	Slider.initSwiper(infiniteSlider, {
+		spaceBetween: 40,
+		grabCursor: false,
+		a11y: false,
+		freeMode: true,
+		loop: true,
+		slidesPerView: "auto",
+		autoplay: {
+			enabled: true,
+			delay: 0,
+			pauseOnMouseEnter: true,
+			disableOnInteraction: false,
+		},
+		centerInsufficientSlides: true,
+		speed: 1000,
 	});
 });

@@ -368,6 +368,10 @@ p:is(code) {
 
 	border-radius: 0.5rem;
 	background-color: var(--color-primary-300);
+
+	.slider-infinite & {
+		background-color: transparent;
+	}
 }
 
 // TO MOVE
