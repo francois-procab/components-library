@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Accordion</title>
+	<title>Cookies</title>
 	<link rel="stylesheet" href="../dist/app.css">
 </head>
 
@@ -13,7 +13,7 @@
 	<header class="component-header">
 		<a href="/" class="backlink">Back to components</a>
 		<div class="wrapper">
-			<h1>Accordions</h1>
+			<h1>Cookies</h1>
 			<p class="mt-3">Just follow the markup below and init the accordion in your javascript file !</p>
 		</div>
 	</header>
@@ -21,36 +21,12 @@
 	<main class="wrapper">
 		<div class="cp-snippet">
 			<div class="cp-snippet__preview">
-				<div class="accordion">
-					<div class="accordion__panel">
-						<div class="accordion__heading">
-							<button class="accordion__btn" aria-expanded="false" aria-controls="acc-1">Accortion Title 1</button>
-						</div>
-						<div class="accordion__content" role="region" aria-hidden="true" id="acc-1">
-							<div class="accordion__inner">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam veniam labore iste assumenda eos non ipsam odio, maxime incidunt, nostrum in commodi tenetur quia natus quibusdam pariatur aut possimus? Iusto.</p>
-								<p>Amet consectetur adipisicing elit. Facere nam quod, cumque accusantium itaque atque deleniti quia vel, rerum porro reiciendis ex quisquam. Perferendis aliquid esse explicabo, aspernatur ab sit?</p>
-							</div>
-						</div>
-					</div>
-					<div class="accordion__panel is-active">
-						<div class="accordion__heading">
-							<button class="accordion__btn" aria-expanded="true" aria-controls="acc-2">Accordion Title</button>
-						</div>
-						<div class="accordion__content" role="region" aria-hidden="false" id="acc-2">
-							<div class="accordion__inner">
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, sapiente. Rem nisi ea pariatur, nulla alias repellat consequuntur modi consequatur similique! Eum, tempore dolore! Debitis ullam tempore dolorum porro voluptatem!</p>
-							</div>
-						</div>
-					</div>
-					<div class="accordion__panel">
-						<div class="accordion__heading">
-							<button class="accordion__btn" aria-expanded="false" aria-controls="acc-3">Accordion Title</button>
-						</div>
-						<div class="accordion__content" role="region" aria-hidden="true" id="acc-3">
-							<div class="accordion__inner">
-								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, sapiente. Rem nisi ea pariatur, nulla alias repellat consequuntur modi consequatur similique! Eum, tempore dolore! Debitis ullam tempore dolorum porro voluptatem!</p>
-							</div>
+				<div class="cookie">
+					<div class="cookie__inner">
+						<div class="btns-group">
+							<button class="btn" data-cookie="cookie-1">Add 1</button>
+							<button class="btn btn--secondary" data-cookie="cookie-2">Add 2</button>
+							<button class="btn btn--success" data-cookie="cookie-3">Add 3</button>
 						</div>
 					</div>
 				</div>
@@ -67,19 +43,19 @@
 				<pre><code>&lt;div class=&quot;accordion&quot;&gt;
 	&lt;div class=&quot;accordion__panel&quot;&gt;
 		&lt;div class=&quot;accordion__heading&quot;&gt;
-			&lt;button class=&quot;accordion__btn&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;acc-1&quot;&gt;Accortion Title 1&lt;/button&gt;
+			&lt;button class=&quot;accordion__btn&quot;&gt;Accortion Title 1&lt;/button&gt;
 		&lt;/div&gt;
-		&lt;div class=&quot;accordion__content&quot; role=&quot;region&quot; aria-hidden=&quot;true&quot; id=&quot;acc-1&quot;&gt;
+		&lt;div class=&quot;accordion__content&quot; aria-hidden=&quot;true&quot;&gt;
 			&lt;div class=&quot;accordion__inner&quot;&gt;
 				...
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;accordion__panel is-active&quot;&gt;
+	&lt;div class=&quot;accordion__panel&quot;&gt;
 		&lt;div class=&quot;accordion__heading&quot;&gt;
-			&lt;button class=&quot;accordion__btn&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;acc-2&quot;&gt;Accordion Title&lt;/button&gt;
+			&lt;button class=&quot;accordion__btn&quot;&gt;Accordion Title&lt;/button&gt;
 		&lt;/div&gt;
-		&lt;div class=&quot;accordion__content&quot; role=&quot;region&quot; aria-hidden=&quot;false&quot; id=&quot;acc-2&quot;&gt;
+		&lt;div class=&quot;accordion__content&quot; aria-hidden=&quot;true&quot;&gt;
 			&lt;div class=&quot;accordion__inner&quot;&gt;
 				...
 			&lt;/div&gt;
@@ -115,8 +91,8 @@
 			<p class="text-small text-center mt-3">Chew - A components Library</p>
 		</div>
 	</footer>
-	<script src="../dist/app.js" defer></script>
-	<script type="module" defer src="../src/js/components/accordion.js"></script>
+	<script src="../dist/app.js"></script>
+	<script type="module" src="../src/js/components/cookies.js"></script>
 </body>
 
 </html>

@@ -67,6 +67,4 @@ export const Modal = (() => {
 	};
 })();
 
-Modal.init({
-	header: false,
-});
+Modal.init();

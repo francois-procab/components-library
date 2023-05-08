@@ -13,7 +13,6 @@ export const Alert = (() => {
 
 	const init = () => {
 		const $alerts = document.querySelectorAll(".alert");
-
 		$alerts.forEach((alert) => {
 			if (alert.classList.contains("alert--has-close")) {
 				const $closeBtn = alert.querySelector("button");

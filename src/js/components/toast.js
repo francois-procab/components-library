@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
 	initToast();
 	document.querySelectorAll(".btn").forEach((btn) => {
 		btn.addEventListener("click", (e) => {
-			console.log(btn.dataset.autoClose);
 			Toast({
 				message: btn.dataset.msg,
 				autoClose: btn.dataset.autoClose === "false" ? false : true,

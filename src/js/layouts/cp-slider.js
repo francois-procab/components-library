@@ -56,8 +56,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	Slider.initSwiper(infiniteSlider, {
 		spaceBetween: 40,
 		grabCursor: false,
-		a11y: false,
-		freeMode: true,
 		loop: true,
 		slidesPerView: "auto",
 		autoplay: {
@@ -67,6 +65,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			disableOnInteraction: false,
 		},
 		centerInsufficientSlides: true,
-		speed: 1000,
+		speed: 2000,
 	});
 });

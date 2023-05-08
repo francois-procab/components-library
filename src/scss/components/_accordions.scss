@@ -1,8 +1,8 @@
 .accordion {
 	--_accordion-w: 100%;
-	--_panel-py: 1rem;
-	--_panel-px: 1rem;
-	--_panel-bkg-color: #fafafa;
+	--_panel-py: var(--size-3);
+	--_panel-px: var(--size-3);
+	--_panel-bkg-color: hsla(var(--color-gray-hs), 98%);
 	--_panel-border-color: #ccc;
 	--_panel-radius: 6px;
 
@@ -12,6 +12,7 @@
 
 .accordion__panel {
 	position: relative;
+	padding: var(--_panel-py) var(--_panel-px);
 
 	background-color: var(--_panel-bkg-color);
 	border: 1px solid transparent;
@@ -22,51 +23,59 @@
 	&:not(:last-child) {
 		margin-block-end: var(--size-2);
 	}
-
-	&.is-active {
-		.accordion__btn::after {
-			transform: rotate(180deg);
-		}
-	}
 }
 
 .accordion__btn {
+	--_ic-w: 0.75rem;
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
 	gap: var(--size-3);
 
-	font-weight: var(--fw-medium);
-
-	padding: var(--_panel-py) var(--_panel-px);
 	width: 100%;
+
+	font-weight: var(--fw-medium);
 
 	&::after {
 		content: "";
 
 		flex-shrink: 0;
 
-		width: 0.75rem;
+		width: var(--_ic-w);
 		aspect-ratio: 1;
 
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: 50%;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 4'%3E%3Cpath d='M.818.182 3.5 2.864 6.182.182a.45.45 0 0 1 .636.636l-3 3a.45.45 0 0 1-.636 0l-3-3A.45.45 0 1 1 .818.182Z' fill='%23000' fill-rule='nonzero'/%3E%3C/svg%3E");
+		background-color: var(--color-gray-900);
+
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		mask-position: 50%;
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 4'%3E%3Cpath d='M.818.182 3.5 2.864 6.182.182a.45.45 0 0 1 .636.636l-3 3a.45.45 0 0 1-.636 0l-3-3A.45.45 0 1 1 .818.182Z' fill='%23000' fill-rule='nonzero'/%3E%3C/svg%3E");
+
+		transition: rotate 0.3s var(--trs-inertia);
+
+		.is-active & {
+			rotate: 180deg;
+		}
 	}
 }
 
 .accordion__content {
-	display: none;
-	padding: 0 var(--_panel-px) var(--_panel-py);
+	display: grid;
+	grid-template-rows: 0fr;
 
 	font-size: var(--fz-0);
 
-	transition: height 0.35s var(--trs-smooth);
-	overflow: hidden;
+	transition: grid-template-rows 0.3s var(--trs-inertia);
 
 	.is-active & {
-		box-sizing: border-box;
-		display: block;
+		grid-template-rows: 1fr;
+	}
+}
+
+.accordion__inner {
+	overflow: hidden;
+
+	> * {
+		margin-block-start: var(--size-3);
 	}
 }
