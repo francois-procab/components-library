@@ -488,3 +488,34 @@ p:is(code) {
 	background-color: var(--color-primary-100);
 	border-radius: 0.25rem;
 }
+
+dialog {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+
+	overflow-y: auto;
+	box-sizing: border-box;
+	max-inline-size: min(30em, 100% - 2em);
+	max-block-size: calc(100% - 2em);
+	padding: 1em;
+	border: 0.15em solid #000000;
+	margin-inline-end: 0;
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+	overscroll-behavior-block: contain;
+}
+
+dialog > * {
+	margin-block: 0;
+}
+
+dialog > * + * {
+	margin-block-start: 1em;
+}
+
+dialog > form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+}
