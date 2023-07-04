@@ -1,5 +1,5 @@
 // Reset default style
-input:not([type="checkbox"]),
+input:not([type="checkbox"], [type="radio"]),
 select,
 textarea {
 	appearance: none;
@@ -130,44 +130,45 @@ select {
 	& > *:not(:last-child) {
 		margin-block-end: var(--size-3);
 	}
+}
 
-	&__row {
-		display: flex;
-		gap: var(--size-3);
+.form__row {
+	display: flex;
+	gap: var(--size-3);
 
-		@media screen and (max-width: 768px) {
-			flex-wrap: wrap;
-		}
+	@media screen and (max-width: 768px) {
+		flex-wrap: wrap;
 	}
+}
 
-	&__field {
-		flex: 0 1 100%;
+.form__field {
+	flex: 0 1 100%;
 
-		&--checkbox {
-			display: flex;
-			align-items: center;
-			gap: var(--size-2);
-
-			> label {
-				margin-block-end: 0;
-			}
-		}
-	}
-
-	&__footer {
-		display: flex;
-		justify-content: center;
-		margin-block-start: var(--size-4);
-	}
-
-	&__search {
+	&--checkbox,
+	&--radio {
 		display: flex;
 		align-items: center;
 		gap: var(--size-2);
 
-		button {
-			max-height: var(--_input-height);
+		> label {
+			margin-block-end: 0;
 		}
+	}
+}
+
+.form__footer {
+	display: flex;
+	justify-content: center;
+	margin-block-start: var(--size-4);
+}
+
+.form__search {
+	display: flex;
+	align-items: center;
+	gap: var(--size-2);
+
+	button {
+		max-height: var(--_input-height);
 	}
 }
 

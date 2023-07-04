@@ -67,7 +67,7 @@ const purgeCSS = (done) => {
 
 // Script minification
 const scripts = (done) => {
-	return src(paths.entryJs, { allowEmpty: true }).pipe(babel()).pipe(webpack(webpackConfig)).pipe(uglify()).pipe(dest(paths.dest));
+	return src(paths.entryJs, { allowEmpty: true }).pipe(plumber()).pipe(babel()).pipe(webpack(webpackConfig)).pipe(uglify()).pipe(dest(paths.dest));
 	done();
 };
 

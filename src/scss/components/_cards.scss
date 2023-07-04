@@ -31,37 +31,37 @@
 	box-shadow: var(--shadow-elevation-medium);
 
 	overflow: hidden;
+}
 
-	&__thumb {
-		background-color: var(--color-primary-100);
-		overflow: hidden;
+.card__thumb {
+	background-color: var(--color-primary-100);
+	overflow: hidden;
 
-		:is(img, picture) {
-			height: 100%;
-			object-position: center;
-		}
+	:is(img, picture) {
+		height: 100%;
+		object-position: center;
 	}
+}
 
-	&__content {
-		padding: var(--_card-content-padding);
-		align-self: center;
+.card__content {
+	padding: var(--_card-content-padding);
+	align-self: center;
+}
+
+.card__title {
+	& + * {
+		margin-block-start: var(--size-2);
 	}
+}
 
-	&__title {
-		& + * {
-			margin-block-start: var(--size-2);
-		}
+.card--horizontal {
+	--_card-direction: row;
+
+	.card__thumb {
+		width: 40dvh;
 	}
+}
 
-	&--horizontal {
-		--_card-direction: row;
-
-		.card__thumb {
-			width: 40dvh;
-		}
-	}
-
-	&--reverse {
-		flex-direction: row-reverse;
-	}
+.card--reverse {
+	flex-direction: row-reverse;
 }

@@ -368,8 +368,9 @@ p:is(code) {
 }
 
 .swiper-slide {
-	display: grid;
-	place-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	aspect-ratio: 4/3;
 
 	font-size: var(--fz-2);

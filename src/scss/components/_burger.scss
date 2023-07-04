@@ -19,36 +19,36 @@
 	background: none;
 	border: 0;
 	cursor: pointer;
+}
 
-	&__icon {
-		display: block;
+.burger__icon {
+	display: block;
+	width: var(--_icon-w);
+	height: var(--_icon-h);
+
+	background-color: currentColor;
+	border-radius: var(--_icon-radius);
+	transition: var(--_transition);
+
+	&::before,
+	&::after {
+		content: "";
+
 		width: var(--_icon-w);
 		height: var(--_icon-h);
+		display: block;
 
 		background-color: currentColor;
 		border-radius: var(--_icon-radius);
 		transition: var(--_transition);
+	}
 
-		&::before,
-		&::after {
-			content: "";
+	&::before {
+		transform: translateY(calc(var(--_icon-h) * 2.75 * -1));
+	}
 
-			width: var(--_icon-w);
-			height: var(--_icon-h);
-			display: block;
-
-			background-color: currentColor;
-			border-radius: var(--_icon-radius);
-			transition: var(--_transition);
-		}
-
-		&::before {
-			transform: translateY(calc(var(--_icon-h) * 2.75 * -1));
-		}
-
-		&::after {
-			transform: translateY(calc(var(--_icon-h) * 1.75));
-		}
+	&::after {
+		transform: translateY(calc(var(--_icon-h) * 1.75));
 	}
 }
 

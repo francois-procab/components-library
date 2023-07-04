@@ -1,3 +1,6 @@
+// Tom Select
+import TomSelect from "tom-select";
+
 import hljs from "highlight.js/lib/core";
 import xml from "highlight.js/lib/languages/xml";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -92,4 +95,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			}
 		});
 	});
+});
+
+new TomSelect("#input-tags", {
+	persist: false,
+	createOnBlur: true,
+	create: true,
 });

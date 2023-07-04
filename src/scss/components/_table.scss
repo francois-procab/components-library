@@ -1,30 +1,31 @@
-.table {
+.c-table {
+	--_border-color: var(--color-gray-100);
+
 	width: 100%;
 
 	border-width: 0;
 	border-style: solid;
 	border-collapse: collapse;
 
+	&--striped {
+		& tbody tr:nth-of-type(odd) > * {
+			box-shadow: inset 0 0 0 9999px hsl(var(--color-primary-hs), 98%);
+		}
+	}
+
 	> thead {
 		vertical-align: bottom;
-
-		th {
-			background-color: var(--color-gray-100);
-		}
+		border-bottom: 0.1rem solid var(--_border-color);
 	}
 
 	th {
 		text-align: -webkit-match-parent;
 	}
 
-	tr > td {
+	tr :is(th, td) {
 		display: table-cell;
 		padding: 1rem 1.2rem;
-		border-bottom: 0.1rem solid #ccc;
-
-		&:first-child {
-			color: #8f9397;
-		}
+		border-bottom: 0.1rem solid var(--_border-color);
 	}
 
 	tbody,

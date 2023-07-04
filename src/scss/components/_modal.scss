@@ -19,51 +19,51 @@
 	overflow-y: hidden;
 	overscroll-behavior-y: contain;
 
-	// Close State
+	// Close Statement
 	visibility: hidden;
 	opacity: 0;
 	transition: opacity 0.6s var(--trs-smooth);
+}
 
-	// The box
-	&__dialog {
-		width: min(100% - 1.5rem, var(--_content-w));
-		max-height: var(--_content-max-h);
-		overflow-y: auto;
-		padding: var(--_content-spacing);
+// The box
+.modal__dialog {
+	width: min(100% - 1.5rem, var(--_content-w));
+	max-height: var(--_content-max-h);
+	overflow-y: auto;
+	padding: var(--_content-spacing);
 
-		background-color: #fff;
-		border-radius: var(--_radius, 0);
-		box-shadow: 0 4px 10px -3px rgba($color: #000, $alpha: 0.2);
+	background-color: #fff;
+	border-radius: var(--_radius, 0);
+	box-shadow: 0 4px 10px -3px rgba($color: #000, $alpha: 0.2);
 
-		// Animate the box
-		translate: 0 -50%;
-		opacity: 0;
-		transition: all 0.8s var(--trs-inertia);
-	}
+	// Animate the box
+	translate: 0 -50%;
+	opacity: 0;
+	transition: all 0.8s var(--trs-inertia);
+}
 
-	&__header {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
+.modal__header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
 
-		margin-block-end: var(--_content-spacing);
-	}
+	margin-block-end: var(--_content-spacing);
+}
 
-	&__close {
-		flex-shrink: 0;
-		line-height: 1;
-		font-size: 140%;
-	}
+.modal__close {
+	flex-shrink: 0;
+	line-height: 1;
+	font-size: 140%;
+}
 
-	// Open State
-	&.is-visible {
+// Open State
+.modal.is-visible {
+	opacity: 1;
+	visibility: visible;
+
+	// Animate the box
+	.modal__dialog {
+		translate: 0 0;
 		opacity: 1;
-		visibility: visible;
-
-		// Animate the box
-		.modal__dialog {
-			translate: 0 0;
-			opacity: 1;
-		}
 	}
 }
