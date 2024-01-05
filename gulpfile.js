@@ -23,6 +23,7 @@ const production = argv.prod ? true : false;
 // Paths
 const paths = {
 	// IN
+	fonts: "./src/fonts/**/*",
 	styles: "./src/scss/**/*.scss",
 	scripts: "./src/js/**/*.js",
 	entryJs: "./src/js/app.js",
@@ -71,6 +72,12 @@ const scripts = (done) => {
 	done();
 };
 
+// Move fonts folder to dist
+const fonts = (done) => {
+	return src(paths.fonts).pipe(dest(paths.fontsDest));
+	done();
+};
+
 // Watch Files
 const watchFiles = (done) => {
 	watch(paths.styles, styles);
@@ -87,5 +94,6 @@ const htmlIncludes = (done) => {
 exports.styles = styles;
 exports.scripts = scripts;
 exports.purgeCSS = purgeCSS;
-exports.default = series(clean, parallel(styles, scripts), parallel(watchFiles));
-exports.build = series(clean, parallel(styles, scripts), parallel(purgeCSS));
+exports.fonts = fonts;
+exports.default = series(clean, parallel(fonts, styles, scripts), parallel(watchFiles));
+exports.build = series(clean, parallel(fonts, styles, scripts), parallel(purgeCSS));

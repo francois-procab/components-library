@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	});
 
 	const sliderAutoFill = document.querySelector(".slider-auto-fill");
-	let autoPlayDelay = 2500;
+	let autoPlayDelay = 5000;
 
 	Slider.initSwiper(sliderAutoFill, {
 		on: {

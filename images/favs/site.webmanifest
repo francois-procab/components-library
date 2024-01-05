@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "Chew",
     "short_name": "Chew",
+=======
+    "name": "Chew Components",
+    "short_name": "Chew Components",
+>>>>>>> 739f6bc (Update theme)
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +18,12 @@
             "type": "image/png"
         }
     ],
+<<<<<<< HEAD
     "theme_color": "#272727",
     "background_color": "#272727",
+=======
+    "theme_color": "#6c63ff",
+    "background_color": "#6c63ff",
+>>>>>>> 739f6bc (Update theme)
     "display": "standalone"
 }

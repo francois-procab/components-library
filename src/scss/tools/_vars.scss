@@ -66,8 +66,8 @@ $bp-small: "(width <= 640px)";
 	}
 
 	// Fonts Families
-	--font-base: "poppins", sans-serif;
-	--font-heading: "poppins", sans-serif;
+	--font-base: "Heebo", sans-serif;
+	--font-heading: "Heebo", sans-serif;
 
 	// Font sizes
 	@each $name, $size in $fonts-sizes {

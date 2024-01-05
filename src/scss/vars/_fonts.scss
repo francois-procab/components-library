@@ -1,6 +1,18 @@
 @use "sass:map";
 @use "../tools/functions" as *;
 
+@font-face {
+	font-family: Heebo;
+	src: url("./fonts/heebo-vf.woff2") format("woff2-variations");
+	font-weight: 100 900;
+}
+
+@font-face {
+	font-family: "Source Sans";
+	src: url("./fonts/source-sans-vf.woff2") format("woff2-variations");
+	font-weight: 100 900;
+}
+
 $fonts-sizes: (
 	"00": fluid(12px, 14px),
 	"0": fluid(15px, 16px),
@@ -12,11 +24,10 @@ $fonts-sizes: (
 );
 
 $fonts-weights: (
-	// Font weights
 	"light": 300,
 	"regular": 400,
 	"medium": 500,
 	"semibold": 600,
 	"bold": 700,
-	"black": 900
+	"black": 900,
 );
