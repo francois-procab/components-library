@@ -84,10 +84,11 @@ p:is(code) {
 
 // Index page
 .components-intro {
-	height: 30dvh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	padding-block: var(--size-3);
 
 	background-color: hsla(var(--color-primary-hs), 95%, 0.2);
 }
