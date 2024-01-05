@@ -1,8 +1,14 @@
 let toastContainer;
 let toastClose;
 
+let moduleInit = false;
+
 // Make a toast
 export const Toast = ({ message, state = "info", autoClose = true }) => {
+	if (!moduleInit) {
+		initToast();
+	}
+
 	// Set classes to toast wrappper
 	const cls = ["toast", `toast--${state}`];
 
@@ -58,11 +64,11 @@ export const initToast = () => {
 
 	document.body.insertAdjacentElement("beforeend", toastsWrap);
 	toastContainer = document.querySelector(".toasts-group");
+
+	moduleInit = true;
 };
 
-// Example for Toggle Toast (To move where it's needed)
 document.addEventListener("DOMContentLoaded", (e) => {
-	initToast();
 	document.querySelectorAll(".btn").forEach((btn) => {
 		btn.addEventListener("click", (e) => {
 			Toast({

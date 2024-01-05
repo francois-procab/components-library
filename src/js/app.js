@@ -6,6 +6,8 @@ import xml from "highlight.js/lib/languages/xml";
 import javascript from "highlight.js/lib/languages/javascript";
 import css from "highlight.js/lib/languages/css";
 
+// import { Toast } from "./components/toast.js";
+
 hljs.registerLanguage("xml", xml);
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("css", css);
@@ -97,8 +99,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	});
 });
 
-new TomSelect("#input-tags", {
-	persist: false,
-	createOnBlur: true,
-	create: true,
-});
+// new TomSelect("#input-tags", {
+// 	persist: false,
+// 	createOnBlur: true,
+// 	create: true,
+// });

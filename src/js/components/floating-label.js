@@ -1,7 +1,6 @@
 export const FloatLabel = (() => {
 	const handleFocus = (e) => {
 		const target = e.target;
-		console.log("error");
 		target.parentNode.classList.add("label-is-floating");
 	};
 
@@ -20,10 +19,10 @@ export const FloatLabel = (() => {
 	};
 
 	const init = () => {
-		const floatContainers = document.querySelectorAll(".has-floating-label");
+		const $floatContainers = document.querySelectorAll(".has-floating-label");
 
-		floatContainers.forEach((element) => {
-			if (element.querySelector("input").value === null) {
+		$floatContainers.forEach((element) => {
+			if (element.querySelector("input").value) {
 				element.classList.add("label-is-floating");
 			}
 
