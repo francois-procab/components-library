@@ -93,12 +93,9 @@
 }
 
 .wrapper {
-	width: min(100% - var(--size-7), 65rem);
+	width: min(100% - var(--size-7), var(--site-width));
 	margin-inline: auto;
-
-	&--center {
-		text-align: center;
-	}
+	padding-inline: var(--site-gutter);
 }
 
 .flow > * + * {

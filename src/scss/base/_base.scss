@@ -53,7 +53,7 @@ img {
 	object-fit: cover;
 }
 
-img:not([src$=".png"]) {
+img:not([src$=".png"], [src$=".webp"]) {
 	background-color: var(--color-primary-100);
 }
 
@@ -519,4 +519,27 @@ dialog > form {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.5em;
+}
+
+.fake-content {
+	background-color: var(--color-primary);
+	height: 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	color: #fff;
+	font-size: var(--fz-0);
+	border-radius: 0.25em;
+
+	&.faded {
+		background-color: hsl(var(--color-primary-hs), 85%);
+	}
+
+	code {
+		display: inline-flex;
+		padding: 0 0.5rem;
+		background-color: rgba(#000, 0.2);
+		border-radius: 3px;
+	}
 }

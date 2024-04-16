@@ -1,0 +1,59 @@
+@use "../tools/" as t;
+
+.columns {
+	--_column-gap: var(--site-gutter);
+
+	display: flex;
+	flex-wrap: wrap;
+	margin-inline: calc(var(--_column-gap) * -1);
+
+	&.is-gapless {
+		margin-inline: unset;
+	}
+
+	&:not(:first-child) {
+		margin-block-start: calc(var(--_column-gap) * -1);
+	}
+
+	&:not(:last-child) {
+		margin-block-end: var(--_column-gap);
+	}
+
+	&:is(.is-aligned-center) {
+		justify-content: center;
+	}
+
+	&:is(.is-aligned-end) {
+		justify-content: flex-end;
+	}
+}
+
+.column {
+	flex: 0 0 auto;
+
+	.columns:not(.is-gapless) & {
+		padding: calc(var(--_column-gap) * 0.5);
+	}
+
+	@media #{t.$bp-large} {
+		@for $i from 1 through 13 {
+			&:is(.is-#{$i}) {
+				width: calc(#{$i} / 12 * 100%);
+			}
+
+			&:is(.is-offset-#{$i}) {
+				margin-inline-start: calc(#{$i} / 12 * 100%);
+			}
+		}
+	}
+
+	@media #{t.$bp-medium}, #{t.$bp-small} {
+		width: 100%;
+
+		@for $i from 1 through 13 {
+			&:is(.is-small-#{$i}) {
+				width: calc(#{$i} / 12 * 100%);
+			}
+		}
+	}
+}
