@@ -113,8 +113,15 @@ p:is(code) {
 
 .components-list {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
 	gap: var(--size-3);
+
+	@media #{t.$bp-large}, #{t.$bp-medium} {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media #{t.$bp-small} {
+		grid-template-columns: 1fr;
+	}
 
 	li {
 		a {
@@ -284,7 +291,7 @@ p:is(code) {
 			background-color: transparent;
 			border: 0;
 			overflow: auto;
-			font-size: 0.875em;
+			font-size: 0.875rem;
 		}
 
 		code {

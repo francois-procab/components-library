@@ -29,7 +29,7 @@
 	},
 	"dependencies": {
 		"highlight.js": "^11.8.0",
-		"swiper": "^11.0.5",
+		"swiper": "^11.1.5",
 		"tom-select": "^2.2.2",
 		"webpack": "^5.82.1"
 	}

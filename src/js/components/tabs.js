@@ -2,40 +2,41 @@
 import { fadeIn, fadeOut } from "../tools/utils.js";
 
 export const Tabs = (() => {
-	const triggerTab = (elt) => {
-		elt.preventDefault();
-		const trigger = elt.target;
+	const triggerTab = (event) => {
+		event.preventDefault();
+
+		const trigger = event.target;
 		const clickedTab = trigger.dataset.tabTarget;
-		const tabPanes = trigger.parentNode.parentNode.querySelectorAll(".tabs__pane");
+		const tabContainer = trigger.closest(".tabs");
+		const tabPanes = tabContainer.querySelectorAll(".tabs__pane");
+		const tabButtons = tabContainer.querySelectorAll(".tabs__btn");
 
 		// Remove attributes and class on siblings
-		for (let sibling of trigger.parentNode.children) {
-			if (sibling !== elt) {
-				sibling.classList.remove("is-active");
-				sibling.setAttribute("aria-selected", false);
-			}
-		}
+		tabButtons.forEach((btn) => {
+			btn.classList.remove("is-active");
+			btn.setAttribute("aria-selected", false);
+		});
 
 		// Close all tab panes
-		[].forEach.call(tabPanes, (pane) => {
+		tabPanes.forEach((pane) => {
 			fadeOut(pane);
 		});
 
 		// Set active class and attributes and show pane
-		elt.target.classList.add("is-active");
-		elt.target.setAttribute("aria-selected", true);
-		fadeIn(document.querySelector(`#${clickedTab}`));
+		trigger.classList.add("is-active");
+		trigger.setAttribute("aria-selected", true);
+		fadeIn(document.getElementById(clickedTab));
 	};
 
 	const init = () => {
-		const $tabBtns = document.querySelectorAll(".tabs__btn");
-		$tabBtns.forEach((tab) => {
+		const tabBtns = document.querySelectorAll(".tabs__btn");
+		tabBtns.forEach((tab) => {
 			tab.addEventListener("click", triggerTab);
 		});
 	};
 
 	return {
-		init: init,
+		init,
 	};
 })();
 

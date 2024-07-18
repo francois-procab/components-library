@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tabs</title>
+
 	<link rel="apple-touch-icon" sizes="180x180" href="../images/favs/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="../images/favs/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="../images/favs/favicon-16x16.png">
@@ -13,6 +14,7 @@
 	<link rel="mask-icon" href="../images/favs/safari-pinned-tab.svg" color="#6c63ff">
 	<meta name="msapplication-TileColor" content="#6c63ff">
 	<meta name="theme-color" content="#6c63ff">
+
 	<link rel="stylesheet" href="../dist/app.css">
 </head>
 
@@ -21,17 +23,18 @@
 	<header class="component-header">
 		<div class="wrapper">
 			<h1>Tabs</h1>
+			<p class="mt-3">Just follow the markup below and init the tabs in your javascript file !</p>
 		</div>
 	</header>
+
 	<main class="wrapper">
 		<div class="cp-snippet">
 			<div class="cp-snippet__preview">
 				<div class="tabs">
 					<nav class="tabs__nav" role="tablist">
-						<button class="tabs__btn is-active" data-tab-target="tab-1" type="button" aria-controls="tab-1" role="tab" aria-selected="true">Tab #1</button>
-						<button class="tabs__btn" data-tab-target="tab-2" role="tab" type="button" aria-controls="tab-2" aria-selected="false">Trigger tab #2</button>
-						<button class="tabs__btn" data-tab-target="tab-3" role="tab" type="button" aria-controls="tab-3" aria-selected="false">Trigger content tab #3</button>
-						<button class="tabs__btn" data-tab-target="tab-4" role="tab" type="button" aria-controls="tab-4" aria-selected="false">Trigger content tab #4</button>
+						<button class="tabs__btn is-active" data-tab-target="tab-1" type="button" aria-controls="tab-1" role="tab" aria-selected="true">Trigger first tab</button>
+						<button class="tabs__btn" data-tab-target="tab-2" role="tab" type="button" aria-controls="tab-2" aria-selected="false">Trigger second tab</button>
+						<button class="tabs__btn" data-tab-target="tab-3" role="tab" type="button" aria-controls="tab-3" aria-selected="false">Trigger third tab</button>
 					</nav>
 					<div class="tabs__content">
 						<div class="tabs__pane is-visible" id="tab-1" role="tabpanel">
@@ -48,17 +51,49 @@
 							<h3>Tab content #3</h3>
 							<p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in, dolorum eveniet et vel repudiandae cum, dolores officia quo tenetur voluptas nihil similique qui voluptate laudantium animi eius suscipit ad.</p>
 						</div>
-						<div class="tabs__pane" id="tab-4" role="tabpanel">
-							<h3>Tab content #4</h3>
-							<p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id in, dolorum eveniet et vel repudiandae cum, dolores officia quo tenetur voluptas nihil similique qui voluptate laudantium animi eius suscipit ad.</p>
-						</div>
 					</div>
 				</div>
+			</div>
+			<div class="cp-snippet__actions">
+				<p>HTML</p>
+				<button class="copy-to-clipboard tooltip" data-tooltip="Copy">
+					<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M5 2V1H10V2H5ZM4.75 0C4.33579 0 4 0.335786 4 0.75V1H3.5C2.67157 1 2 1.67157 2 2.5V12.5C2 13.3284 2.67157 14 3.5 14H7V13H3.5C3.22386 13 3 12.7761 3 12.5V2.5C3 2.22386 3.22386 2 3.5 2H4V2.25C4 2.66421 4.33579 3 4.75 3H10.25C10.6642 3 11 2.66421 11 2.25V2H11.5C11.7761 2 12 2.22386 12 2.5V7H13V2.5C13 1.67157 12.3284 1 11.5 1H11V0.75C11 0.335786 10.6642 0 10.25 0H4.75ZM9 8.5C9 8.77614 8.77614 9 8.5 9C8.22386 9 8 8.77614 8 8.5C8 8.22386 8.22386 8 8.5 8C8.77614 8 9 8.22386 9 8.5ZM10.5 9C10.7761 9 11 8.77614 11 8.5C11 8.22386 10.7761 8 10.5 8C10.2239 8 10 8.22386 10 8.5C10 8.77614 10.2239 9 10.5 9ZM13 8.5C13 8.77614 12.7761 9 12.5 9C12.2239 9 12 8.77614 12 8.5C12 8.22386 12.2239 8 12.5 8C12.7761 8 13 8.22386 13 8.5ZM14.5 9C14.7761 9 15 8.77614 15 8.5C15 8.22386 14.7761 8 14.5 8C14.2239 8 14 8.22386 14 8.5C14 8.77614 14.2239 9 14.5 9ZM15 10.5C15 10.7761 14.7761 11 14.5 11C14.2239 11 14 10.7761 14 10.5C14 10.2239 14.2239 10 14.5 10C14.7761 10 15 10.2239 15 10.5ZM14.5 13C14.7761 13 15 12.7761 15 12.5C15 12.2239 14.7761 12 14.5 12C14.2239 12 14 12.2239 14 12.5C14 12.7761 14.2239 13 14.5 13ZM14.5 15C14.7761 15 15 14.7761 15 14.5C15 14.2239 14.7761 14 14.5 14C14.2239 14 14 14.2239 14 14.5C14 14.7761 14.2239 15 14.5 15ZM8.5 11C8.77614 11 9 10.7761 9 10.5C9 10.2239 8.77614 10 8.5 10C8.22386 10 8 10.2239 8 10.5C8 10.7761 8.22386 11 8.5 11ZM9 12.5C9 12.7761 8.77614 13 8.5 13C8.22386 13 8 12.7761 8 12.5C8 12.2239 8.22386 12 8.5 12C8.77614 12 9 12.2239 9 12.5ZM8.5 15C8.77614 15 9 14.7761 9 14.5C9 14.2239 8.77614 14 8.5 14C8.22386 14 8 14.2239 8 14.5C8 14.7761 8.22386 15 8.5 15ZM11 14.5C11 14.7761 10.7761 15 10.5 15C10.2239 15 10 14.7761 10 14.5C10 14.2239 10.2239 14 10.5 14C10.7761 14 11 14.2239 11 14.5ZM12.5 15C12.7761 15 13 14.7761 13 14.5C13 14.2239 12.7761 14 12.5 14C12.2239 14 12 14.2239 12 14.5C12 14.7761 12.2239 15 12.5 15Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>
+			<div class="cp-snippet__code">
+				<pre><code>&#x3C;div class=&#x22;tabs&#x22;&#x3E;
+&#x9;&#x3C;nav class=&#x22;tabs__nav&#x22; role=&#x22;tablist&#x22;&#x3E;
+&#x9;&#x9;&#x3C;button class=&#x22;tabs__btn is-active&#x22; data-tab-target=&#x22;tab-1&#x22; type=&#x22;button&#x22; aria-controls=&#x22;tab-1&#x22; role=&#x22;tab&#x22; aria-selected=&#x22;true&#x22;&#x3E;Trigger fist tab&#x3C;/button&#x3E;
+&#x9;&#x9;&#x3C;button class=&#x22;tabs__btn&#x22; data-tab-target=&#x22;tab-2&#x22; role=&#x22;tab&#x22; type=&#x22;button&#x22; aria-controls=&#x22;tab-2&#x22; aria-selected=&#x22;false&#x22;&#x3E;Trigger second tab&#x3C;/button&#x3E;
+&#x9;&#x3C;/nav&#x3E;
+&#x9;&#x3C;div class=&#x22;tabs__content&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;tabs__pane is-visible&#x22; id=&#x22;tab-1&#x22; role=&#x22;tabpanel&#x22;&#x3E;
+&#x9;&#x9;&#x9;...
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;div class=&#x22;tabs__pane&#x22; id=&#x22;tab-2&#x22; role=&#x22;tabpanel&#x22;&#x3E;
+&#x9;&#x9;&#x9;...
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;...
+&#x9;&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;</code></pre>
+			</div>
+			<div class="cp-snippet__actions">
+				<p>JS</p>
+				<button class="copy-to-clipboard tooltip" data-tooltip="Copy">
+					<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M5 2V1H10V2H5ZM4.75 0C4.33579 0 4 0.335786 4 0.75V1H3.5C2.67157 1 2 1.67157 2 2.5V12.5C2 13.3284 2.67157 14 3.5 14H7V13H3.5C3.22386 13 3 12.7761 3 12.5V2.5C3 2.22386 3.22386 2 3.5 2H4V2.25C4 2.66421 4.33579 3 4.75 3H10.25C10.6642 3 11 2.66421 11 2.25V2H11.5C11.7761 2 12 2.22386 12 2.5V7H13V2.5C13 1.67157 12.3284 1 11.5 1H11V0.75C11 0.335786 10.6642 0 10.25 0H4.75ZM9 8.5C9 8.77614 8.77614 9 8.5 9C8.22386 9 8 8.77614 8 8.5C8 8.22386 8.22386 8 8.5 8C8.77614 8 9 8.22386 9 8.5ZM10.5 9C10.7761 9 11 8.77614 11 8.5C11 8.22386 10.7761 8 10.5 8C10.2239 8 10 8.22386 10 8.5C10 8.77614 10.2239 9 10.5 9ZM13 8.5C13 8.77614 12.7761 9 12.5 9C12.2239 9 12 8.77614 12 8.5C12 8.22386 12.2239 8 12.5 8C12.7761 8 13 8.22386 13 8.5ZM14.5 9C14.7761 9 15 8.77614 15 8.5C15 8.22386 14.7761 8 14.5 8C14.2239 8 14 8.22386 14 8.5C14 8.77614 14.2239 9 14.5 9ZM15 10.5C15 10.7761 14.7761 11 14.5 11C14.2239 11 14 10.7761 14 10.5C14 10.2239 14.2239 10 14.5 10C14.7761 10 15 10.2239 15 10.5ZM14.5 13C14.7761 13 15 12.7761 15 12.5C15 12.2239 14.7761 12 14.5 12C14.2239 12 14 12.2239 14 12.5C14 12.7761 14.2239 13 14.5 13ZM14.5 15C14.7761 15 15 14.7761 15 14.5C15 14.2239 14.7761 14 14.5 14C14.2239 14 14 14.2239 14 14.5C14 14.7761 14.2239 15 14.5 15ZM8.5 11C8.77614 11 9 10.7761 9 10.5C9 10.2239 8.77614 10 8.5 10C8.22386 10 8 10.2239 8 10.5C8 10.7761 8.22386 11 8.5 11ZM9 12.5C9 12.7761 8.77614 13 8.5 13C8.22386 13 8 12.7761 8 12.5C8 12.2239 8.22386 12 8.5 12C8.77614 12 9 12.2239 9 12.5ZM8.5 15C8.77614 15 9 14.7761 9 14.5C9 14.2239 8.77614 14 8.5 14C8.22386 14 8 14.2239 8 14.5C8 14.7761 8.22386 15 8.5 15ZM11 14.5C11 14.7761 10.7761 15 10.5 15C10.2239 15 10 14.7761 10 14.5C10 14.2239 10.2239 14 10.5 14C10.7761 14 11 14.2239 11 14.5ZM12.5 15C12.7761 15 13 14.7761 13 14.5C13 14.2239 12.7761 14 12.5 14C12.2239 14 12 14.2239 12 14.5C12 14.7761 12.2239 15 12.5 15Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>
+			<div class="cp-snippet__code">
+				<pre><code class="language-js">Tabs.init();</code></pre>
 			</div>
 		</div>
 	</main>
 	<footer class="py-8">
-		<div class="wrapper wrapper--center">
+		<div class="wrapper text-center">
 			<a href="https://github.com/francois-procab/components-library" class="github-card" rel="noopener norefferer" target="_blank">
 				<svg class="icon" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M7.49933 0.25C3.49635 0.25 0.25 3.49593 0.25 7.50024C0.25 10.703 2.32715 13.4206 5.2081 14.3797C5.57084 14.446 5.70302 14.2222 5.70302 14.0299C5.70302 13.8576 5.69679 13.4019 5.69323 12.797C3.67661 13.235 3.25112 11.825 3.25112 11.825C2.92132 10.9874 2.44599 10.7644 2.44599 10.7644C1.78773 10.3149 2.49584 10.3238 2.49584 10.3238C3.22353 10.375 3.60629 11.0711 3.60629 11.0711C4.25298 12.1788 5.30335 11.8588 5.71638 11.6732C5.78225 11.205 5.96962 10.8854 6.17658 10.7043C4.56675 10.5209 2.87415 9.89918 2.87415 7.12104C2.87415 6.32925 3.15677 5.68257 3.62053 5.17563C3.54576 4.99226 3.29697 4.25521 3.69174 3.25691C3.69174 3.25691 4.30015 3.06196 5.68522 3.99973C6.26337 3.83906 6.8838 3.75895 7.50022 3.75583C8.1162 3.75895 8.73619 3.83906 9.31523 3.99973C10.6994 3.06196 11.3069 3.25691 11.3069 3.25691C11.7026 4.25521 11.4538 4.99226 11.3795 5.17563C11.8441 5.68257 12.1245 6.32925 12.1245 7.12104C12.1245 9.9063 10.4292 10.5192 8.81452 10.6985C9.07444 10.9224 9.30633 11.3648 9.30633 12.0413C9.30633 13.0102 9.29742 13.7922 9.29742 14.0299C9.29742 14.2239 9.42828 14.4496 9.79591 14.3788C12.6746 13.4179 14.75 10.7025 14.75 7.50024C14.75 3.49593 11.5036 0.25 7.49933 0.25Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
@@ -71,6 +106,7 @@
 			<p class="text-small text-center mt-3">Chew - A components Library</p>
 		</div>
 	</footer>
+	<script src="../dist/app.js" defer></script>
 	<script type="module" defer src="../src/js/components/tabs.js"></script>
 </body>
 
