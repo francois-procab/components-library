@@ -1,6 +1,25 @@
 @use "sass:map";
 @use "../vars/index" as *;
 
+.wrapper {
+	--_wrapper-px: var(--size-7);
+
+	width: min(100% - var(--_wrapper-px), var(--site-width));
+	margin-inline: auto;
+}
+
+.flow > * + * {
+	margin-block-end: var(--flow-space, var(--fluid-size-4));
+}
+
+:is(h1, h2, h3, blockquote) {
+	--flow-space: var(--fluid-size-5);
+}
+
+:is(h1, h2, h3) + * {
+	--flow-space: var(--fluid-size-5);
+}
+
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -18,8 +37,8 @@
 	flex-shrink: 0;
 
 	width: 1em;
-	height: 1em;
-	margin-top: -0.1rem;
+	aspect-ratio: 1;
+	margin-block-start: -0.1rem;
 
 	fill: currentColor;
 	overflow: hidden;
@@ -92,31 +111,20 @@
 	}
 }
 
-.wrapper {
-	width: min(100% - var(--size-7), var(--site-width));
-	margin-inline: auto;
-	// padding-inline: var(--site-gutter);
-}
-
-.flow > * + * {
-	margin-block-end: var(--flow-space, var(--fluid-size-4));
-}
-
-:is(h1, h2, h3, blockquote) {
-	--flow-space: var(--fluid-size-5);
-}
-
-:is(h1, h2, h3) + * {
-	--flow-space: var(--fluid-size-5);
-}
-
 // Sizes
 .w-100 {
+	max-width: 100%;
+	width: 100%;
+}
+
+.w-75 {
+	max-width: 75%;
 	width: 100%;
 }
 
 .w-50 {
-	width: 50%;
+	max-width: 50%;
+	width: 100%;
 }
 
 // Ratios
@@ -138,19 +146,6 @@
 
 .ratio-21-9 {
 	aspect-ratio: 21/9;
-}
-
-// Texts
-.text-x-small {
-	font-size: var(--fz-00);
-}
-
-.text-small {
-	font-size: var(--fz-0);
-}
-
-.text-center {
-	text-align: center;
 }
 
 .list {
